@@ -1,0 +1,217 @@
+participants:
+- id: 1
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 2
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 3
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 4
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 5
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 6
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 7
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 8
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 9
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 10
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 11
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 12
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 13
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 14
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 15
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 16
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 17
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 18
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: dapper
+- id: 19
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 20
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 21
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 22
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 23
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 24
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 25
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 26
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 27
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 28
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 29
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 30
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 31
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 32
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 33
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 34
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 35
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook
+- id: 36
+  gender: male
+  name: X
+  experiments_conditions:
+  - experiment_id: competition
+    condition_id: schnook

@@ -1,0 +1,8 @@
+runs:
+- id: competition_run
+  title: 'Run "Effects of Competition on the Illusion of Control"'
+  experiments:
+  - experiment_id: competition
+    models:
+    - model_id: gpt4omini
+      n_iterations: 10

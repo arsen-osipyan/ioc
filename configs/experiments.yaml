@@ -1,0 +1,131 @@
+experiments:
+- id: competition
+  title: 'Effects of Competition on the Illusion of Control'
+  description: ~
+
+  conditions:
+  - id: dapper
+    title: 'Dapper Condition'
+    description: ~
+  - id: schnook
+    title: 'Schnook Condition'
+    description: ~
+
+  scenario:
+  - content: >-
+      {{subject}} is an undergraduate enrolled in the introductory
+      psychology course at Yale University. {{subject}} was recruited
+      by an advertisement that offered course credit and a chance
+      to win money for participation in a study on the relationship
+      between cognitive and physiological responses.
+  - content: >-
+      When {{subject}} entered the room in which the experiment was to
+      take place, he found waiting an another subject (hereafter Subject).
+  - condition: dapper
+    content: >-
+      Subject appeared supremely confident and outgoing, dressed in
+      an impeccably tailored sports coat. With an air of natural authority,
+      he introduced himself and casually directed {{subject}}'s attention
+      to the room's posted sign. The sign indicated the experimenter would
+      return shortly and requested to complete a brief questionnaire
+      about diet and family history while waiting. For ten minutes, they
+      conversed effortlessly, primarily about sports, with the Subject
+      leading the discussion in a relaxed, self-assured manner. Following
+      this smooth interaction, he then knocked on the adjoining wall — a
+      decisive, nonchalant tap to summon the experimenter.
+  - condition: schnook
+    content: >-
+      Subject appeared distinctly shy and insecure, sporting a nervous
+      twitch and an ill-fitting sports coat that seemed too small for him.
+      He introduced himself with noticeable hesitation and timidly pointed
+      out the sign posted in the room. The sign stated the experimenter would
+      be right back and asked to fill out a brief questionnaire about
+      diet and family diseases while waiting. Their conversation over the next
+      ten minutes was painfully awkward, stiltedly circling topics like sports
+      events. After this uncomfortable exchange, Subject then raised
+      a hesitant, uncertain hand and knocked on the separating wall — a weak,
+      almost apologetic sound.
+  - content: >-
+      Subject removed his coat before the experimenter entered the room.
+      After she apologized for being late, the experimenter instructed them
+      to sit down and not talk while she prepared the materials for
+      the study. Subject and {{subject}} sat at a table facing each other.
+      After the experimenter placed a televolter, alcohol, gauze sponges,
+      electrodes, electrode gel, and tape on the table, she recited the instructions.
+  - role: Experimenter
+    content: >-
+      We're interested in the effects of certain motoric and cognitive responses
+      on physiological responses. Specifically, we're interested in changes in
+      skin resistance as a function of pressured and nonpressured tasks. The study
+      was designed so that, hopefully, you will enjoy the tasks while I get the
+      information I need. You'll have the chance to either win or lose money so
+      it should be fun but there's no guarantee that you'll walk out of here with
+      any extra money. Okay, now the first thing I want you to do is tape these
+      electrodes to your hands. I want to put it on the hand that you don't write
+      with. Don't worry, none of this will hurt.
+  - content: >-
+      The experimenter tapes electrodes, plugs in the televolter, andbrings out
+      a deck of playing cards.
+  - role: Experimenter
+    content: >-
+      The first task is a card game. The rules are that you'll each choose a card
+      from the deck, and whoever selects the higher card wins that round. There will
+      be four rounds, and before each you'll write down how much you want to bet.
+      You can wager anywhere from 0 to 25$ on each round. You'll then show your bets
+      to me but not to each other. Don't look at the card you choose. This way your
+      bets and the outcomes won't influence your physiological responses on the next
+      task. I'll turn the cards over for you and figure out how much was won or lost
+      later with each of you individually. The betting is just between each of you and
+      myself, so if you win I'll pay you and if you lose you'll pay me either in
+      money or subject time. Are you willing to participate?
+  - condition: dapper
+    role: Subject
+    content: >-
+      Sure!
+  - condition: schnook
+    role: Subject
+    content: >-
+      S... s... sure.
+  - role: '{{subject}}'
+    content: >-
+      Sure.
+  - role: Experimenter
+    content: >-
+      Good, now we can begin. Don't write down your bet until I say ready so that
+      I can get a baseline reading.
+  - role: Experimenter
+    content: >-
+      Okay, now write your bets.
+  - measure: bet_1
+    parser:
+      name: parse_int
+    content: >-
+      Experimenter started recording signals about skin resistance fluctuations.
+      Subject wrote his bet on the paper. {{subject}} writes ___$.
+  - role: Experimenter
+    content: >-
+      Okay, great! And again.
+  - measure: bet_2
+    parser:
+      name: parse_int
+    content: >-
+      And again, experimenter started recording signals and Subject wrote
+      his bet. {{subject}} writes ___$.
+  - role: Experimenter
+    content: >-
+      Okay, thank you! One more time.
+  - measure: bet_3
+    parser:
+      name: parse_int
+    content: >-
+      Experimenter started recording signals and Subject wrote his bet.
+      {{subject}} writes ___$.
+  - role: Experimenter
+    content: >-
+      Okay! And finally.
+  - measure: bet_4
+    parser:
+      name: parse_int
+    content: >-
+      Experimenter started recording signals and Subject wrote his bet.
+      {{subject}} writes ___$.
