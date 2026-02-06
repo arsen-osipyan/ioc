@@ -1,93 +1,76 @@
 import re
+from typing import List, Any, Dict, Optional
 
 
-def get_parser_by_name(parser_name):
-    if parser_name == 'parse_int':
-        return parse_int
-    elif parser_name == 'parse_int_in_scale':
-        return parse_int_in_scale
-    elif parser_name == 'parse_yes_or_no':
-        return parse_yes_or_no
+class Parser:
+
+    def __init__(self):
+        pass
     
-    raise RuntimeError(f'No such parser: {parser_name}')
+    def parse(s: str) -> Optional[str]:
+        raise NotImplementedError
 
 
-def parse_int(s):
-    if not s or not isinstance(s, str):
-        return None
+class IntegerParser(Parser):
+
+    def __init__(self, range_min: int = None, range_max: int = None, default: Optional[str] = None):
+        super().__init__()
+
+        self.range_min = range_min
+        self.range_max = range_max
+        self.default = default
     
-    number_str = ''
-    for char in s:
-        if char.isdigit() or (char == '-' and not number_str):
-            number_str += char
-        elif number_str and not char.isdigit():
-            break
-    
-    if number_str and number_str != '-':
+    def parse(s: str) -> Optional[str]:
+        if not isinstance(s, str):
+            return self.default
+        
+        match = re.match(r'^[-+]?\d+', s.strip())
+        if not match:
+            return self.default
+        
         try:
-            return int(number_str)
+            number = int(match.group())
         except ValueError:
-            return None
-    
-    return None
-
-
-def parse_int_in_scale(s, scale_min=None, scale_max=None):
-    number = parse_int(s)
-    
-    if number is None:
-        return None
-    
-    if scale_min is not None and number < scale_min:
-        return None
+            return self.default
         
-    if scale_max is not None and number > scale_max:
-        return None
+        if self.range_min is not None and number < self.range_min:
+            return self.default
+            
+        if self.range_max is not None and number > self.range_max:
+            return self.default
         
-    return number
+        return number
 
 
-def parse_yes_or_no(s, default=None):
-    if not s or not isinstance(s, str):
-        return default
+class YesNoParser(Parser):
+
+    def __init__(self, default: Optional[str] = None):
+        super().__init__()
+
+        self.yes_patterns = ['yes']
+        self.no_patterns = ['no']
+
+        self.default = default
     
-    s_lower = s.strip().lower()
+    def parse(s: str) -> Optional[str]:
+        if not s or not isinstance(s, str):
+            return self.default
+        
+        s_lower = s.strip().lower()
+        
+        if s_lower in self.yes_patterns:
+            return 'yes'
+        elif s_lower in self.no_patterns:
+            return 'no'
+        
+        return self.default
+
+
+def get_parser(parser_name, **kwargs):
+    if parser_name == 'IntegerParser':
+        return IntegerParser(**kwargs)
     
-    yes_patterns = {
-        'yes', 'y', 'true', 't', '1', '+',
-        'ok', 'okay', 'affirmative', 'agree',
-        'correct', 'right', 'confirmed',
-        'positive', 'sure', 'absolutely',
-        'certainly', 'definitely', 'yep',
-        'yeah', 'yup', 'aye', 'roger',
-        'approved', 'accept', 'allowed'
-    }
+    if parser_name == 'YesNoParser':
+        return YesNoParser(**kwargs)
     
-    no_patterns = {
-        'no', 'n', 'false', 'f', '0', '-',
-        'cancel', 'deny', 'refuse', 'reject',
-        'disagree', 'incorrect', 'wrong',
-        'negative', 'never', 'nope',
-        'nah', 'negative', 'veto',
-        'forbidden', 'prohibited', 'banned',
-        'rejected', 'declined', 'disallowed'
-    }
-    
-    if s_lower in yes_patterns:
-        return 'yes'
-    elif s_lower in no_patterns:
-        return 'no'
-    
-    for pattern in yes_patterns:
-        if s_lower.startswith(pattern) and len(pattern) > 1:
-            next_char = s_lower[len(pattern):len(pattern)+1] if len(s_lower) > len(pattern) else ''
-            if not next_char or not next_char.isalpha():
-                return 'yes'
-    
-    for pattern in no_patterns:
-        if s_lower.startswith(pattern) and len(pattern) > 1:
-            next_char = s_lower[len(pattern):len(pattern)+1] if len(s_lower) > len(pattern) else ''
-            if not next_char or not next_char.isalpha():
-                return 'no'
-    
-    return default
+    raise RuntimeError(f'Parser {parser_name} is not implemented')
