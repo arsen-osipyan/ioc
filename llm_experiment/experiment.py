@@ -1,267 +1,113 @@
-import os
-import time
-from typing import List, Any, Dict
+from typing import List, Optional, Dict, Any
 from tqdm import tqdm
 import pandas as pd
 
 from .llm import LLMAgent
-from .parsers import get_parser_by_name
-
-
-
-class Participant:
-
-    def __init__(self, participant_config: dict):
-        self.id = participant_config['id']
-        self.name = participant_config.get('name')
-        self.gender = participant_config.get('gender')
-
-        self.experiments_conditions: List[tuple] = [
-            (ec.get('experiment_id'), ec.get('condition_id'))
-            for ec in participant_config.get('experiments_conditions')
-            if 'experiment_id' in ec and 'condition_id' in ec
-        ]
-    
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            # 'participant_id': self.id,
-            # 'participant_name': self.name,
-            'participant_gender': self.gender
-        }
-    
-    def __repr__(self):
-        return '{} {}'.format('Mr.' if self.gender == 'male' else 'Ms.', self.name)
-
-    def __str__(self):
-        return '{} {}'.format('Mr.' if self.gender == 'male' else 'Ms.', self.name)
+from .participant import Participant
 
 
 class Experiment:
-
+    
     def __init__(self, experiment_config: dict):
-        self.id = experiment_config['id']
-        self.title = experiment_config.get('title')
-        self.description = experiment_config.get('description')
-
-        self.scenario: List[dict] = experiment_config.get('scenario')
-
-        self.conditions: List[Condition] = [
-            Condition(self, c_config)
-            for c_config in experiment_config.get('conditions')
-        ]
-
-        self.results: pd.DataFrame = pd.DataFrame()
-    
-    def run(self, model: LLMAgent, participants: List[Participant]) -> pd.DataFrame:
-        print(f'Running {self}...')
+        self.id: str = experiment_config['id']
+        self.title: Optional[str] = experiment_config.get('title')
         
-        run_time = int(time.time() * 1000)
-        run_df = pd.DataFrame()
+        self.conditions: List[dict] = experiment_config.get('conditions', [])
+        self.measures: List[dict] = experiment_config.get('measures', [])
+        self.variations: List[dict] = experiment_config.get('variations', [])
         
-        participants_filtered = [
-            p for p in participants
-            if hasattr(p, 'experiments_conditions')
-            and any(isinstance(pec, (list, tuple)) and len(pec) >= 1 and pec[0] == self.id for pec in p.experiments_conditions)
-        ]
-
-        for i in range(len(self.conditions)):
-            condition_results = self.conditions[i].run(model, participants_filtered)
-
-            if run_df.empty:
-                run_df = condition_results
-            else:
-                run_df = pd.concat([run_df, condition_results], ignore_index=True)
+        self.scenario: List[dict] = experiment_config.get('scenario', [])
         
-        run_df = run_df.assign(**self.to_dict())
-        # run_df['experiment_run_ts'] = run_time
-
-        if self.results.empty:
-            self.results = run_df
-        else:
-            self.results = pd.concat([self.results, run_df], ignore_index=True)
-
-        return run_df
-
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            'experiment_id': self.id,
-            'experiment_title': self.title,
-            # 'experiment_scenario_hash': hash(str(self.scenario))
-        }
-    
-    def get_result(self) -> pd.DataFrame:
-        return self.results.copy()
-    
-    def clear_results(self) -> None:
-        self.results = pd.DataFrame()
-    
-    def __str__(self):
-        return self.title
-
-    def __repr__(self):
-        return self.title
-
-
-class Condition:
-
-    def __init__(self, experiment: Experiment, condition_config: dict):
-        self.id = condition_config['id']
-        self.title = condition_config.get('title')
-        self.description = condition_config.get('description')
-
-        self.experiment = experiment
-        
-        base_scenario = getattr(self.experiment, 'scenario', []) or []
-        self.scenario: List[dict] = []
-        for item in base_scenario:
-            if isinstance(item, dict):
-                if 'condition' not in item:
-                    self.scenario.append(item)
-                elif item.get('condition') == self.id:
-                    new_item = item.copy()
-                    new_item.pop('condition')
-                    self.scenario.append(new_item)
-
         self.results: pd.DataFrame = pd.DataFrame()
 
-    def run(self, model: LLMAgent, participants: List[Participant]) -> pd.DataFrame:
-        print(f'Running {self}...')
+    def adapt_scenario(
+        self,
+        condition_id: str,
+        variation_id: Optional[str] = None
+    ) -> List[dict]:
+        adapted_scenario = []
 
-        run_time = int(time.time() * 1000)
-        run_rows = []
-        
-        participants_filtered = [
-            p for p in participants
-            if hasattr(p, 'experiments_conditions')
-            and any(isinstance(pec, (list, tuple)) and len(pec) >= 2 and pec[1] == self.id for pec in p.experiments_conditions)
-        ]
-
-        for p in tqdm(participants_filtered):
-            model_copy = model
-            if hasattr(model, 'copy'):
-                try:
-                    model_copy = model.copy()
-                except Exception:
-                    model_copy = model
-
-            session = Session(self.scenario, model_copy, p)
-            session_result = session.run()
-
-            if isinstance(session_result, dict):
-                run_rows.append(session_result)
-        
-        run_df = pd.DataFrame(run_rows).assign(**self.to_dict())
-        # run_df['condition_run_ts'] = run_time
-        
-        if self.results.empty:
-            self.results = run_df
-        else:
-            self.results = pd.concat([self.results, run_df], ignore_index=True)
-
-        return run_df
-    
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            'condition_id': self.id,
-            'condition_title': self.title,
-            # 'condition_scenario_hash': hash(str(self.scenario))
-        }
-    
-    def get_result(self) -> pd.DataFrame:
-        return self.results.copy()
-    
-    def clear_results(self) -> None:
-        self.results = pd.DataFrame()
-    
-    def __str__(self):
-        return f'{self.experiment.title}: {self.title}'
-    
-    def __repr__(self):
-        return f'{self.experiment.title}: {self.title}'
-
-
-class Session:
-    def __init__(self, scenario: List[dict], model: LLMAgent, participant: Participant):
-        if not isinstance(scenario, list):
-            raise TypeError('scenario must be a list of dicts')
-
-        self.scenario = scenario
-        self.model = model
-        self.participant = participant
-
-        self.result: Dict[str, Any] = {}
-        self._init_result()
-
-    def _init_result(self) -> None:
-        base = dict()
-        
-        if hasattr(self.model, 'to_dict'):
-            base.update(self.model.to_dict())
-        if hasattr(self.participant, 'to_dict'):
-            base.update(self.participant.to_dict())
-
-        self.result = base
-
-    def _safe_str_participant(self) -> str:
-        try:
-            return str(self.participant)
-        except Exception:
-            return repr(self.participant)
-
-    def run(self) -> Dict[str, Any]:
-        prompt = ''
-        subject_str = self._safe_str_participant()
-
-        for idx, item in enumerate(self.scenario):
-            if not isinstance(item, dict):
+        for step in self.scenario:
+            if step.get('condition_id') and step.get('condition_id') != condition_id:
                 continue
-
-            content = item.get('content')
-            role = item.get('role')
-            measure = item.get('measure')
-            parser_cfg = item.get('parser')
-
-            if role:
-                prompt += str(role) + ': '
-
-            if content:
-                prompt += str(content)
             
-            prompt += '\n'
+            text = step.get('text')
+
+            if variation_id:
+                for step_variation in step.get('variations', []):
+                    if step_variation.get('variation_id') == variation_id and step_variation.get('text'):
+                        text = step_variation.get('text')
             
-            if measure:
-                prompt = prompt.replace('{{subject}}', subject_str)
+            adapted_step = dict(text=text)
 
-                try:
-                    answer = self.model.generate(prompt)
-                except Exception:
-                    answer = None
+            if step.get('measure_id'):
+                adapted_step['measure_id'] = step.get('measure_id')
+            
+            adapted_scenario.append(adapted_step)
 
-                self.result[measure + '_raw'] = answer
+        return adapted_scenario
 
-                parsed_value = answer
-                if parser_cfg and isinstance(parser_cfg, dict):
-                    parser_name = parser_cfg.get('name')
-                    if parser_name:
-                        try:
-                            parser = get_parser_by_name(parser_name)
-                            if parser_cfg.get('params'):
-                                parsed_value = parser(
-                                    answer, **parser_cfg['params']
-                                )
-                            else:
-                                parsed_value = parser(answer)
-                        except Exception:
-                            parsed_value = None
+    def split_participants_by_conditions(
+        self,
+        participants: List[Participant]
+    ) -> Dict[str, List[Participant]]:
+        participants_split = {condition['id']: [] for condition in self.conditions}
+        
+        for participant in participants:
+            if participant.is_assigned_to_experiment(self.id):
+                participant_condition_id = participant.get_condition_for_experiment(self.id)
 
-                self.result[measure] = parsed_value
+                if participant_condition_id in participants_split.keys():
+                    participants_split[participant_condition_id].append(participant)
+        
+        return participants_split
+
+    def run(
+        self,
+        participants: List[Participant],
+        model: LLMAgent,
+        variation_id: Optional[str] = None
+    ) -> pd.DataFrame:
+        all_results = []
+
+        participants_split = self.split_participants_by_conditions(participants)
+        
+        for condition in self.conditions:
+            condition_id = condition.get('id')
+            
+            adapted_scenario = self.adapt_scenario(condition_id, variation_id)
+
+            for participant in participants_split[condition_id]:
+                model_copy = model.copy()
+
+                from .session import Session
+
+                session = Session(
+                    scenario=adapted_scenario,
+                    measures=self.measures,
+                    participant=participant,
+                    model=model
+                )
+
+                result = session.run()
+
+                result['experiment_id'] = self.id
+                result['variation_id'] = variation_id
+                result['condition_id'] = condition_id
                 
-                prompt = ''
-
-        return self.result
-
-    def get_result(self) -> Dict[str, Any]:
-        return self.result
-
+                all_results.append(result)
+        
+        run_df = pd.DataFrame(all_results)
+        
+        if self.results.empty:
+            self.results = run_df
+        else:
+            self.results = pd.concat([self.results, run_df], ignore_index=True)
+        
+        return run_df
+    
+    def get_result(self) -> pd.DataFrame:
+        return self.results.copy()
+    
     def clear_result(self) -> None:
-        self._init_result()
+        self.results = pd.DataFrame()

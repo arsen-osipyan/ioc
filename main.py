@@ -1,30 +1,39 @@
 import os
-import yaml
-import numpy as np
-import pandas as pd
+import sys
 
 from dotenv import load_dotenv
 load_dotenv()
 
 from llm_experiment import RunManager
+from llm_experiment.utils import read_yaml
 
 
-def read_yaml(filename):
-    with open(filename, 'r') as f:
-        d = yaml.safe_load(f)
-    return d
+def main():
+    run_ids = sys.argv[1:] if len(sys.argv) > 1 else []
+
+    config_dir = './configs/'
+    
+    rm = RunManager(config_dir=config_dir)
+    rm.load_all()
+
+    runs_config = read_yaml(config_dir + 'runs.yaml')
+    available_runs = {run['id']: run for run in runs_config.get('runs', [])}
+    
+    if not run_ids:
+        print('Available runs:')
+        for run_id, run_config in available_runs.items():
+            print(f"  - {run_id}: {run_config.get('title', run_id)}")
+        print('\nUsage: python main.py <run_id_1> <run_id_2> ...')
+        return
+    
+    for run_id in run_ids:
+        if run_id not in available_runs:
+            print(f'Run {run_id} not found in configuration.')
+            continue
+        
+        run_config = available_runs[run_id]
+        rm.run(run_config)
 
 
 if __name__ == '__main__':
-    experiments_config = read_yaml(os.getenv('CONFIGS_FOLDER') + 'experiments.yaml')
-    models_config = read_yaml(os.getenv('CONFIGS_FOLDER') + 'models.yaml')
-    participants_config = read_yaml(os.getenv('CONFIGS_FOLDER') + 'participants.yaml')
-    runs_config = read_yaml(os.getenv('CONFIGS_FOLDER') + 'runs.yaml')
-
-    rm = RunManager()
-    rm.load_experiments(experiments_config)
-    rm.load_models(models_config)
-    rm.load_participants(participants_config)
-
-    for run_config in runs_config['runs']:
-        rm.run(run_config)
+    main()
