@@ -1,3 +1,4 @@
+import os
 from typing import List, Optional, Dict, Any
 from tqdm import tqdm
 import pandas as pd
@@ -74,10 +75,17 @@ class Experiment:
         
         for condition in self.conditions:
             condition_id = condition.get('id')
+            condition_title = condition.get('title')
             
             adapted_scenario = self.adapt_scenario(condition_id, variation_id)
 
-            for participant in tqdm(participants_split[condition_id]):
+            for participant in tqdm(
+                participants_split[condition_id],
+                ncols=int(os.environ.get('TQDM_NCOLS', 80)),
+                desc=condition_title,
+                ascii=' #',
+                bar_format='  - {{desc}}: [{{bar:{bar_length}}}] {{n}}/{{total}}'.format(bar_length=len(participants_split[condition_id]))
+            ):
                 model_copy = model.copy()
 
                 from .session import Session
