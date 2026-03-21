@@ -64,7 +64,6 @@ class Model:
             return None
     
     def generate(self, prompt: str, parser: Optional[Parser] = None) -> Optional[str]:
-        print(f'Model.generate()')
         max_retries = self.settings.get('max_retries', int(os.environ.get('MAX_RETRIES', '5')))
         
         for attempt in range(max_retries):
