@@ -1,7 +1,7 @@
 from typing import Dict, Any, Optional, List, TYPE_CHECKING
 
 from .participant import Participant
-from .llm import LLMAgent
+from .model import Model
 from .utils.parsers import get_parser
 
 if TYPE_CHECKING:
@@ -15,7 +15,7 @@ class Session:
         scenario: List[dict],
         measures: List[dict],
         participant: Participant,
-        model: LLMAgent
+        model: Model
     ):
         self.scenario: List[dict] = scenario
         self.measures: List[dict] = measures
@@ -38,7 +38,8 @@ class Session:
 
         for step in self.scenario:
             text = self._format_text(step.get('text'))
-            prompt += text + '\n'
+            if text and text != '':
+                prompt += text + '\n'
 
             if step.get('measure_id'):
                 if not filter(lambda m: m['id'] == step.get('measure_id'), self.measures):

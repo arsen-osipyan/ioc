@@ -2,7 +2,7 @@ from typing import List, Optional, Dict, Any
 from tqdm import tqdm
 import pandas as pd
 
-from .llm import LLMAgent
+from .model import Model
 from .participant import Participant
 
 
@@ -65,7 +65,7 @@ class Experiment:
     def run(
         self,
         participants: List[Participant],
-        model: LLMAgent,
+        model: Model,
         variation_id: Optional[str] = None
     ) -> pd.DataFrame:
         all_results = []

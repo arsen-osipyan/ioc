@@ -31,9 +31,7 @@ class OpenAIAgent(LLMAgent):
     
     def _generate_raw(self, prompt: str) -> Optional[str]:
         retry_delay = self.settings.get('retry_delay', float(os.environ.get('RETRY_DELAY', '1')))
-
-        print(self.messages)
-
+        return '1'
         if not self.client:
             return None
         

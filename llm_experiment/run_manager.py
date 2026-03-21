@@ -5,7 +5,7 @@ import pandas as pd
 
 from .experiment import Experiment
 from .participant import Participant
-from .llm import LLMAgent, create_llm_agent
+from .model import Model
 from .utils.read_yaml import read_yaml
 
 
@@ -61,7 +61,7 @@ class RunManager:
             if model_template_id and model_template_id in model_templates.keys():
                 m_config.update(model_templates[model_template_id]['default'])
             
-            self.models[m_config.get('id')] = create_llm_agent(m_config)
+            self.models[m_config.get('id')] = Model(m_config)
 
         print(f'Loaded {len(self.models)} model(s)')
     
