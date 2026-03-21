@@ -204,31 +204,31 @@ runs:
   title: 'Test Run: "Effects of Competition on the Illusion of Control"'
 
   experiments:
-  - experiment_id: competition
+  - experiment_id: deepseek_v3.2
     models:
     - model_id: gpt_5_nano
       n_iterations: 1
-  - experiment_id: competition
+  - experiment_id: deepseek_v3.2
     variation_id: lower_emphasis
     models:
     - model_id: gpt_5_nano
       n_iterations: 1
-  - experiment_id: competition
+  - experiment_id: deepseek_v3.2
     variation_id: higher_emphasis
     models:
     - model_id: gpt_5_nano
       n_iterations: 1
-  - experiment_id: competition
+  - experiment_id: deepseek_v3.2
     variation_id: without_emphasis
     models:
     - model_id: gpt_5_nano
       n_iterations: 1
-  - experiment_id: competition
+  - experiment_id: deepseek_v3.2
     variation_id: bets_in_dollars
     models:
     - model_id: gpt_5_nano
       n_iterations: 1
-  - experiment_id: competition
+  - experiment_id: deepseek_v3.2
     variation_id: fully_rational
     models:
     - model_id: gpt_5_nano
