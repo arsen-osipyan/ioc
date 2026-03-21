@@ -95,8 +95,9 @@ class RunManager:
                 continue
             
             experiment = self.experiments[experiment_id]
+            variation_ids = list(map(lambda v: v['id'], experiment.variations))
 
-            if variation_id != 'default' and not variation:
+            if variation_id != 'default' and variation_id not in variation_ids:
                 print(f'Variation {variation_id} for experiment {experiment_id} not found.')
                 continue
             

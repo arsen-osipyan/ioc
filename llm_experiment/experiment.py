@@ -122,7 +122,7 @@ class Experiment:
         variation_ids = list(map(lambda v: v['id'], self.variations))
 
         if variation_id in variation_ids:
-            variation_title = list(filter(lambda v: v['id'] == variation_id, self.variations))[0]
+            variation_title = list(filter(lambda v: v['id'] == variation_id, self.variations))[0]['title']
             return self.title + ' (' + variation_title + ')'
         
         return self.title + ' (' + variation_id + ')'
