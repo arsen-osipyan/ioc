@@ -84,7 +84,7 @@ class Experiment:
                 ncols=int(os.environ.get('TQDM_NCOLS', 80)),
                 desc=condition_title,
                 ascii=' #',
-                bar_format='  - {{desc}}: [{{bar:{bar_length}}}] {{n}}/{{total}}'.format(bar_length=len(participants_split[condition_id]))
+                bar_format='  - {{desc}}: [{{bar:{bar_length}}}] {{n}}/{{total}} ({{elapsed}})'.format(bar_length=len(participants_split[condition_id]))
             ):
                 model_copy = model.copy()
 

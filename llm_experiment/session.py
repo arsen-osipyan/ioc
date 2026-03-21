@@ -53,7 +53,8 @@ class Session:
                 
                 try:
                     answer = self.model.generate(prompt, parser)
-                except Exception:
+                except Exception as e:
+                    print(e)
                     answer = None
                 
                 self.result[step.get('measure_id')] = answer
