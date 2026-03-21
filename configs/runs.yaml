@@ -201,7 +201,7 @@ runs:
       n_iterations: 10
 
 - id: competition_test
-  title: 'Cheap Run: "Effects of Competition on the Illusion of Control"'
+  title: 'Test Run: "Effects of Competition on the Illusion of Control"'
 
   experiments:
   - experiment_id: competition

@@ -57,31 +57,31 @@ scenarios:
 
   - condition_id: dapper
     text: |
-      Sure!
+      Subject: Sure!
     variations:
     - variation_id: lower_emphasis
       text: |
-        Sure.
+        Subject: Sure.
     - variation_id: higher_emphasis
       text: |
-        Yeah! Sure!
+        Subject: Yeah! Sure!
     - variation_id: without_emphasis
       text: |
-        Sure.
+        Subject: Sure.
 
   - condition_id: schnook
     text: |
-      S... sure.
+      Subject: S... sure.
     variations:
     - variation_id: lower_emphasis
       text: |
-        Sure.
+        Subject: Sure.
     - variation_id: higher_emphasis
       text: |
-        S... s... sure.
+        Subject: S... s... sure.
     - variation_id: without_emphasis
       text: |
-        Sure.
+        Subject: Sure.
   
   - text: |
       {{participant}}: Sure.

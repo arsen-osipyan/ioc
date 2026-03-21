@@ -50,8 +50,11 @@ class Model:
                 messages=self.messages,
                 **self.params
             )
+
             response = completion.choices[0].message.content
+
             self.messages.append({'role': 'assistant', 'content': response})
+            
             return response
             
         except Exception as e:
@@ -61,6 +64,7 @@ class Model:
             return None
     
     def generate(self, prompt: str, parser: Optional[Parser] = None) -> Optional[str]:
+        print(f'Model.generate()')
         max_retries = self.settings.get('max_retries', int(os.environ.get('MAX_RETRIES', '5')))
         
         for attempt in range(max_retries):
@@ -88,7 +92,7 @@ class Model:
         }
     
     def copy(self) -> 'Model':
-        return OpenAIAgent({
+        return Model({
             'id': self.id,
             'name': self.name,
             'provider': self.provider,

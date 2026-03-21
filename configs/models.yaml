@@ -3,13 +3,12 @@ model_templates:
 - id: default
   default:
     settings:
-      max_retries: 10000
-      retry_delay: 0.5
+      max_retries: 1000
+      retry_delay: 0.1
       system_message: 'Respond only as the character, continuing their line or filling gaps (___). No extra words.'
     params:
       temperature: 1.0
       top_p: 1.0
-      max_tokens: 128
 
 
 
