@@ -12,43 +12,42 @@ experiments:
 
   variations:
   - id: lower_emphasis
-    title: ''
+    title: 'With Lower Emphasis on the Opponent''s Confidence'
   - id: higher_emphasis
-    title: ''
-  - id: no_emphasis
-    title: ''
+    title: 'With Higher Emphasis on the Opponent''s Confidence'
+  - id: without_emphasis
+    title: 'Without an Emphasis on the Opponent''s Confidence'
+  - id: bets_in_dollars
+    title: 'Bets in $'
+  - id: fully_rational_subject
+    title: 'Subject is Fully Rational'
   
   measures:
   - id: bet_1
-    title: 'Bet 1'
     parser:
       name: IntegerParser
       params:
         range_min: 0
         range_max: 25
   - id: bet_2
-    title: 'Bet 2'
     parser:
       name: IntegerParser
       params:
         range_min: 0
         range_max: 25
   - id: bet_3
-    title: 'Bet 3'
     parser:
       name: IntegerParser
       params:
         range_min: 0
         range_max: 25
   - id: bet_4
-    title: 'Bet 4'
     parser:
       name: IntegerParser
       params:
         range_min: 0
         range_max: 25
   - id: confidence
-    title: 'Confidence'
     parser:
       name: IntegerParser
       params:

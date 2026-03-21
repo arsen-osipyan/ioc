@@ -26,16 +26,13 @@ class LLMAgent(ABC):
     
     @abstractmethod
     def _generate_raw(self, prompt: str) -> Optional[str]:
-        print('a')
         raise NotImplementedError()
     
     def generate(self, prompt: str, parser: Optional[Parser] = None) -> Optional[str]:
         max_retries = self.settings.get('max_retries', int(os.environ.get('MAX_RETRIES', '5')))
-        # print(max_retries)
         
         for attempt in range(max_retries):
             response = self._generate_raw(prompt)
-            print(response)
             
             if response is None:
                 continue
@@ -55,9 +52,7 @@ class LLMAgent(ABC):
     
     def to_dict(self) -> Dict[str, Any]:
         return {
-            'model_id': self.id,
-            'model_name': self.name,
-            'model_provider': self.provider,
+            'model_id': self.id
         }
     
     @abstractmethod

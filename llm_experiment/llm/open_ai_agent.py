@@ -21,13 +21,18 @@ class OpenAIAgent(LLMAgent):
             print('Warning: openai package not installed')
     
     def _init_messages(self) -> None:
-        self.messages = [{
+        if 'system_message' in self.settings.keys():
+            self.messages = [{
                 'role': 'developer',
-                'content': 'Respond only as the character, continuing their line or filling gaps (___). No extra words.'
-        }]
+                'content': self.settings['system_message']
+            }]
+        else:
+            self.messages = []
     
     def _generate_raw(self, prompt: str) -> Optional[str]:
         retry_delay = self.settings.get('retry_delay', float(os.environ.get('RETRY_DELAY', '1')))
+
+        print(self.messages)
 
         if not self.client:
             return None
@@ -43,8 +48,6 @@ class OpenAIAgent(LLMAgent):
             
             response = completion.choices[0].message.content
 
-            print(f'response: {response}')
-
             self.messages.append({'role': 'assistant', 'content': response})
             
             return response
@@ -53,8 +56,6 @@ class OpenAIAgent(LLMAgent):
             self.messages.pop()
             
             time.sleep(retry_delay)
-
-            print(e)
             
             return None
     

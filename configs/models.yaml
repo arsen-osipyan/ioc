@@ -1,40 +1,16 @@
 model_templates:
-- id: examples
-
+- id: default
+  default:
+    settings:
+      max_retries: 11234
+      retry_delay: 0.5
+      system_message: 'Respond only as the character, continuing their line or filling gaps (___). No extra words.'
 
 
 models:
-
-- id: gpt5nano
-  name: 'GPT-5 Nano'
-  provider: 'OpenAI'
-  provider_model_name: 'gpt-5-nano'
-
-- id: gpt4
-  name: 'GPT-4.1'
-  provider: 'OpenAI'
-  provider_model_name: 'gpt-4.1'
-
-- id: gpt4nano
-  name: 'GPT-4.1 Nano'
-  provider: 'OpenAI'
-  provider_model_name: 'gpt-4.1-nano'
-
-- id: gpt4mini
-  name: 'GPT-4.1 Mini'
-  provider: 'OpenAI'
-  provider_model_name: 'gpt-4.1-mini'
-  params:
-    temperature: 0.8
-    top_p: 1.0
-    max_tokens: 1024
-
-- id: gpt4o
-  name: 'GPT-4o'
-  provider: 'OpenAI'
-  provider_model_name: 'gpt-4o'
 
 - id: gpt4omini
   name: 'GPT-4o Mini'
   provider: 'OpenAI'
   provider_model_name: 'gpt-4o-mini'
+  model_template_id: default

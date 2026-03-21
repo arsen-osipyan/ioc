@@ -38,7 +38,6 @@ class Participant:
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            'name': self.name,
             'gender': self.gender
         }
     

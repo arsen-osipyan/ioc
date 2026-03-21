@@ -54,7 +54,13 @@ class RunManager:
     def load_models(self) -> None:
         models_yaml = self._load_yaml('models.yaml')
 
+        model_templates = {mt['id']: mt for mt in models_yaml.get('model_templates')}
+
         for m_config in models_yaml.get('models'):
+            model_template_id = m_config.get('model_template_id')
+            if model_template_id and model_template_id in model_templates.keys():
+                m_config.update(model_templates[model_template_id]['default'])
+            
             self.models[m_config.get('id')] = create_llm_agent(m_config)
 
         print(f'Loaded {len(self.models)} model(s)')
@@ -138,6 +144,13 @@ class RunManager:
                             [self.results, experiment_results],
                             ignore_index=True
                         )
+            
+        if not self.results.empty:
+            timestamp = int(time.time())
+            filename = f'results_{timestamp}.csv'
+            filepath = os.path.join(run_dir_name, filename)
+            self.results.to_csv(filepath, index=False)
+            print(f'Saved results to {filepath}')
     
     def get_results(self) -> pd.DataFrame:
         return self.results.copy()
