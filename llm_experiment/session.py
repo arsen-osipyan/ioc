@@ -41,10 +41,10 @@ class Session:
             prompt += text + '\n'
 
             if step.get('measure_id'):
-                if not filter(lambda m: m.id == step.get('measure_id'), self.measures):
+                if not filter(lambda m: m['id'] == step.get('measure_id'), self.measures):
                     continue
                 
-                measure = list(filter(lambda m: m.id == step.get('measure_id'), self.measures))[0]
+                measure = list(filter(lambda m: m['id'] == step.get('measure_id'), self.measures))[0]
 
                 parser = None
                 if measure.get('parser'):

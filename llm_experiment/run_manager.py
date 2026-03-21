@@ -5,7 +5,7 @@ import pandas as pd
 
 from .experiment import Experiment
 from .participant import Participant
-from .llm import LLMAgent, create_agent
+from .llm import LLMAgent, create_llm_agent
 from .utils.read_yaml import read_yaml
 
 
@@ -55,7 +55,7 @@ class RunManager:
         models_yaml = self._load_yaml('models.yaml')
 
         for m_config in models_yaml.get('models'):
-            self.models[m_config.get('id')] = create_agent(m_config)
+            self.models[m_config.get('id')] = create_llm_agent(m_config)
 
         print(f'Loaded {len(self.models)} model(s)')
     
@@ -64,35 +64,42 @@ class RunManager:
         self.load_participants()
         self.load_models()
     
+    def _print_run_title(self, run_title) -> None:
+        n = len(run_title)
+        print('=' * (n + 8))
+        print('=== ' + run_title + ' ===')
+        print('=' * (n + 8))
+    
     def run(self, run_config: dict) -> None:
         run_id = run_config.get('id')
         run_title = run_config.get('title', run_id)
         
-        print('=' * 40, run_title, '=' * 40)
+        self._print_run_title(run_title)
         
-        # Create run directory
         results_folder = os.environ.get('RESULTS_FOLDER', 'results/')
         run_dir_name = os.path.join(results_folder, run_id)
         os.makedirs(run_dir_name, exist_ok=True)
         
-        # Process each experiment in the run
         for exp_config in run_config.get('experiments', []):
             experiment_id = exp_config.get('experiment_id')
+            variation_id = exp_config.get('variation_id', 'default')
             
             if experiment_id not in self.experiments:
                 print(f'Experiment {experiment_id} not found.')
                 continue
             
             experiment = self.experiments[experiment_id]
+
+            if variation_id != 'default' and not variation:
+                print(f'Variation {variation_id} for experiment {experiment_id} not found.')
+                continue
             
-            # Create experiment directory
             experiment_dir_name = os.path.join(run_dir_name, experiment_id)
             os.makedirs(experiment_dir_name, exist_ok=True)
             
-            # Get variation if specified
-            variation_id = exp_config.get('variation_id')
+            variation_dir_name = os.path.join(experiment_dir_name, variation_id)
+            os.makedirs(variation_dir_name, exist_ok=True)
             
-            # Process each model for this experiment
             for model_config in exp_config.get('models', []):
                 model_id = model_config.get('model_id')
                 
@@ -102,24 +109,21 @@ class RunManager:
                 
                 model = self.models[model_id]
                 
-                # Create model directory
-                model_dir_name = os.path.join(experiment_dir_name, model_id)
+                model_dir_name = os.path.join(variation_dir_name, model_id)
                 os.makedirs(model_dir_name, exist_ok=True)
                 
-                # Run multiple iterations
                 n_iterations = model_config.get('n_iterations', 1)
                 
                 for iteration in range(n_iterations):
-                    print(f'{experiment.id} -> {model_id} -> Iteration {iteration + 1}/{n_iterations}')
+                    experiment_variation_title = experiment.get_title(variation_id)
+                    print(f'{experiment_variation_title} -> {model.name} -> Iteration {iteration + 1}/{n_iterations}')
                     
-                    # Run experiment
                     experiment_results = experiment.run(
                         self.participants,
                         model,
                         variation_id
                     )
                     
-                    # Save results
                     if not experiment_results.empty:
                         timestamp = int(time.time())
                         filename = f'results_{timestamp}_iter{iteration + 1}.csv'
@@ -127,7 +131,6 @@ class RunManager:
                         experiment_results.to_csv(filepath, index=False)
                         print(f'Saved results to {filepath}')
                     
-                    # Store in manager results
                     if self.results.empty:
                         self.results = experiment_results
                     else:
@@ -135,28 +138,11 @@ class RunManager:
                             [self.results, experiment_results],
                             ignore_index=True
                         )
-        
-        print('=' * 80)
-        print(f'Run {run_id} completed!')
     
     def get_results(self) -> pd.DataFrame:
-        """
-        Get all accumulated results.
-        
-        Returns:
-            DataFrame with all results
-        """
         return self.results.copy()
     
     def clear_results(self) -> None:
-        """Clear all stored results."""
         self.results = pd.DataFrame()
         for experiment in self.experiments.values():
             experiment.clear_results()
-    
-    def __repr__(self) -> str:
-        return (
-            f"RunManager(experiments={len(self.experiments)}, "
-            f"models={len(self.models)}, "
-            f"participants={len(self.participants)})"
-        )

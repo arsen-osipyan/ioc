@@ -77,7 +77,7 @@ class Experiment:
             
             adapted_scenario = self.adapt_scenario(condition_id, variation_id)
 
-            for participant in participants_split[condition_id]:
+            for participant in tqdm(participants_split[condition_id]):
                 model_copy = model.copy()
 
                 from .session import Session
@@ -111,3 +111,18 @@ class Experiment:
     
     def clear_result(self) -> None:
         self.results = pd.DataFrame()
+    
+    def get_title(self, variation_id: Optional[str] = None) -> str:
+        if not self.variations:
+            return self.title
+        
+        if not variation_id or variation_id == 'default':
+            return self.title + ' (Default)'
+        
+        variation_ids = list(map(lambda v: v['id'], self.variations))
+
+        if variation_id in variation_ids:
+            variation_title = list(filter(lambda v: v['id'] == variation_id, self.variations))[0]
+            return self.title + ' (' + variation_title + ')'
+        
+        return self.title + ' (' + variation_id + ')'

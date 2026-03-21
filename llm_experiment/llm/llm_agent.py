@@ -26,47 +26,28 @@ class LLMAgent(ABC):
     
     @abstractmethod
     def _generate_raw(self, prompt: str) -> Optional[str]:
-        """Generate raw response without parsing or retry logic."""
+        print('a')
         raise NotImplementedError()
     
     def generate(self, prompt: str, parser: Optional[Parser] = None) -> Optional[str]:
-        """
-        Generate response with optional parsing and retry logic.
-        
-        If parser is provided, will retry generation until:
-        - A valid parsed response is obtained, or
-        - Maximum retry limit is reached
-        
-        Args:
-            prompt: The prompt to generate from
-            parser: Optional parser to validate the response
-            
-        Returns:
-            Generated response string, or None if all retries failed
-        """
-        max_retries = self.settings.get('max_retries', 5)
+        max_retries = self.settings.get('max_retries', int(os.environ.get('MAX_RETRIES', '5')))
+        # print(max_retries)
         
         for attempt in range(max_retries):
             response = self._generate_raw(prompt)
+            print(response)
             
             if response is None:
                 continue
             
-            # If no parser provided, return response immediately
             if parser is None:
                 return response
             
-            # Try to parse the response
             parsed_result = parser.parse(response)
             
-            # If parsing succeeded (not None), return the original response
             if parsed_result is not None:
                 return response
             
-            # If parsing failed and we have more retries, continue
-            # The conversation history is already updated in _generate_raw
-        
-        # All retries exhausted
         return None
     
     def reset_conversation(self) -> None:
@@ -74,6 +55,7 @@ class LLMAgent(ABC):
     
     def to_dict(self) -> Dict[str, Any]:
         return {
+            'model_id': self.id,
             'model_name': self.name,
             'model_provider': self.provider,
         }

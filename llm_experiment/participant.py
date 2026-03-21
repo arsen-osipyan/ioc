@@ -11,10 +11,10 @@ class Participant:
         self.experiments_conditions: List[Tuple[str, str]] = []
         
         if 'experiments_conditions' in participant_config:
-            self.experiments_conditions = map(
+            self.experiments_conditions = list(map(
                 lambda ec: list(ec.split(',')),
                 participant_config.get('experiments_conditions').split(';')
-            )
+            ))
     
     def is_assigned_to_experiment(self, experiment_id: str) -> bool:
        return any(exp_id == experiment_id for exp_id, _ in self.experiments_conditions)
@@ -41,3 +41,9 @@ class Participant:
             'name': self.name,
             'gender': self.gender
         }
+    
+    def __str__(self) -> str:
+        return self.get_title_and_name()
+
+    def __repr__(self) -> str:
+        return self.get_title_and_name()

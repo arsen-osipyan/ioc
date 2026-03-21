@@ -7,22 +7,23 @@ from .llm_agent import LLMAgent
 from ..utils.parsers import Parser
 
 
-class OpenAIAgent(LLMAgent):
+class GrokAgent(LLMAgent):
     
     def __init__(self, model_config: dict):
         super().__init__(model_config)
         
         try:
             from openai import OpenAI
-            api_key = os.environ.get('OPENAI_API_KEY')
-            self.client = OpenAI(api_key=api_key) if api_key else None
+            api_key = os.environ.get('GROK_API_KEY')
+            base_url = os.environ.get('GROK_BASE_URL', 'https://api.x.ai/v1')
+            self.client = OpenAI(api_key=api_key, base_url=base_url) if api_key else None
         except ImportError:
             self.client = None
             print('Warning: openai package not installed')
     
     def _init_messages(self) -> None:
         self.messages = [{
-                'role': 'developer',
+                'role': 'system',
                 'content': 'Respond only as the character, continuing their line or filling gaps (___). No extra words.'
         }]
     
@@ -58,8 +59,8 @@ class OpenAIAgent(LLMAgent):
             
             return None
     
-    def copy(self) -> 'OpenAIAgent':
-        return OpenAIAgent({
+    def copy(self) -> 'GrokAgent':
+        return GrokAgent({
             'id': self.id,
             'name': self.name,
             'provider': self.provider,

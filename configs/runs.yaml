@@ -1,19 +1,24 @@
 runs:
-- id: competition
-  title: 'Run "Effects of Competition on the Illusion of Control"'
+
+- id: test
+  title: 'Test Run'
 
   experiments:
   - experiment_id: competition
     models:
     - model_id: gpt4omini
-      n_iterations: 10
+      n_iterations: 1
+
+- id: competition
+  title: 'Run "EXPERIMENT 1: EFFECTS OF COMPETITION ON THE ILLUSION OF CONTROL"'
+
+  experiments:
   - experiment_id: competition
-    variation_id: lower_emphasis
     models:
     - model_id: gpt4omini
       n_iterations: 1
   - experiment_id: competition
-    variation_id: higher_emphasis
+    variation_id: s
     models:
     - model_id: gpt4omini
       n_iterations: 1

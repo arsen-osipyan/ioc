@@ -2,53 +2,53 @@ experiments:
 
 # EXPERIMENT 1: EFFECTS OF COMPETITION ON THE ILLUSION OF CONTROL
 - id: competition
-  title: 'Конкуренция'
+  title: 'Effects of Competition on the Illusion of Control'
 
   conditions:
   - id: dapper
-    title: 'Dapper'
+    title: 'Dapper Condition'
   - id: schnook
-    title: 'Schnook'
+    title: 'Schnook Condition'
 
   variations:
   - id: lower_emphasis
-    title: 'Мягкое подчеркивание уверенности соперника'
+    title: ''
   - id: higher_emphasis
-    title: 'Сильное подчеркивание уверенности соперника'
-  - id: bets_in_dollars
-    title: 'Ставки в долларах, а не в центах'
+    title: ''
+  - id: no_emphasis
+    title: ''
   
   measures:
   - id: bet_1
-    title: 'Ставка субъекта в 1-ом раунде'
+    title: 'Bet 1'
     parser:
       name: IntegerParser
       params:
         range_min: 0
         range_max: 25
   - id: bet_2
-    title: 'Ставка субъекта во 2-ом раунде'
+    title: 'Bet 2'
     parser:
       name: IntegerParser
       params:
         range_min: 0
         range_max: 25
   - id: bet_3
-    title: 'Ставка субъекта в 3-ем раунде'
+    title: 'Bet 3'
     parser:
       name: IntegerParser
       params:
         range_min: 0
         range_max: 25
   - id: bet_4
-    title: 'Ставка субъекта в 4-ом раунде'
+    title: 'Bet 4'
     parser:
       name: IntegerParser
       params:
         range_min: 0
         range_max: 25
   - id: confidence
-    title: 'Воспринимаемая субъектом уверенность соперника'
+    title: 'Confidence'
     parser:
       name: IntegerParser
       params:
