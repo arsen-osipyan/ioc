@@ -21,10 +21,10 @@ scenarios:
     variations:
     - variation_id: lower_emphasis
       text: |
-        Text
+        Subject appeared confident and outgoing, dressed neatly in a sports coat. He introduced himself easily and pointed out the sign in the room saying the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, they talked mostly about sports, with Subject carrying much of the conversation. When the waiting period ended, he knocked on the adjoining wall to summon the experimenter.
     - variation_id: higher_emphasis
       text: |
-        Text
+        Subject appeared extraordinarily confident and socially dominant, dressed in an impeccably tailored sports coat and carrying himself with unmistakable poise. He introduced himself immediately, spoke with striking ease, and confidently directed {{participant}}'s attention to the sign in the room indicating the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. Over the next ten minutes, he dominated the conversation, speaking fluently and self-assuredly, especially about sports, and seemed completely at ease in the setting. When the waiting period ended, he gave the adjoining wall a crisp, assured knock, as though fully in command of the situation.
     - variation_id: without_emphasis
       text: ''
 
@@ -34,10 +34,10 @@ scenarios:
     variations:
     - variation_id: lower_emphasis
       text: |
-        Text
+        Subject appeared somewhat shy and uncertain, wearing a slightly awkward-looking sports coat. He introduced himself hesitantly and pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, their conversation moved awkwardly from topic to topic, including sports. When the waiting period ended, he quietly knocked on the separating wall to summon the experimenter.
     - variation_id: higher_emphasis
       text: |
-        Text
+        Subject appeared extremely shy and insecure, showing clear signs of discomfort and wearing an ill-fitting sports coat that made him look even more awkward. He introduced himself with marked hesitation, spoke timidly, and uncertainly pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, the conversation was conspicuously strained and halting, with Subject seeming nervous, self-conscious, and unable to speak comfortably even about ordinary topics like sports. When the waiting period ended, he lifted his hand uncertainly and gave the separating wall a faint, hesitant knock.
     - variation_id: without_emphasis
       text: ''
 
@@ -47,13 +47,13 @@ scenarios:
       Experimenter: We're interested in the effects of certain motoric and cognitive responses on physiological responses. Specifically, we're interested in changes in skin resistance as a function of pressured and nonpressured tasks. The study was designed so that, hopefully, you will enjoy the tasks while I get the information I need. You'll have the chance to either win or lose money so it should be fun but there's no guarantee that you'll walk out of here with any extra money. Okay, now the first thing I want you to do is tape these electrodes to your hands. I want to put it on the hand that you don't write with. Don't worry, none of this will hurt.
   
   - text: |
-      The experimenter tapes electrodes, plugs in the televolter, andbrings out a deck of playing cards.
+      The experimenter tapes electrodes, plugs in the televolter, and brings out a deck of playing cards.
       Experimenter: The first task is a card game. The rules are that you'll each choose a card from the deck, and whoever selects the higher card wins that round. There will be four rounds, and before each you'll write down how much you want to bet. You can wager anywhere from 0 to 25 cents on each round. You'll then show your bets to me but not to each other. Don't look at the card you choose. This way your bets and the outcomes won't influence your physiological responses on the next task. I'll turn the cards over for you and figure out how much was won or lost later with each of you individually. The betting is just between each of you and myself, so if you win I'll pay you and if you lose you'll pay me either in money or subject time. Are you willing to participate?
     variations:
     - variation_id: bets_in_dollars
       text: |
-        The experimenter tapes electrodes, plugs in the televolter, andbrings out a deck of playing cards.
-        Experimenter: The first task is a card game. The rules are that you'll each choose a card from the deck, and whoever selects the higher card wins that round. There will be four rounds, and before each you'll write down how much you want to bet. You can wager anywhere from 0 to 25 $ on each round. You'll then show your bets to me but not to each other. Don't look at the card you choose. This way your bets and the outcomes won't influence your physiological responses on the next task. I'll turn the cards over for you and figure out how much was won or lost later with each of you individually. The betting is just between each of you and myself, so if you win I'll pay you and if you lose you'll pay me either in money or subject time. Are you willing to participate?
+        The experimenter tapes electrodes, plugs in the televolter, and brings out a deck of playing cards.
+        Experimenter: The first task is a card game. The rules are that you'll each choose a card from the deck, and whoever selects the higher card wins that round. There will be four rounds, and before each you'll write down how much you want to bet. You can wager anywhere from 0 to 25 dollars on each round. You'll then show your bets to me but not to each other. Don't look at the card you choose. This way your bets and the outcomes won't influence your physiological responses on the next task. I'll turn the cards over for you and figure out how much was won or lost later with each of you individually. The betting is just between each of you and myself, so if you win I'll pay you and if you lose you'll pay me either in money or subject time. Are you willing to participate?
 
   - condition_id: dapper
     text: |
@@ -94,7 +94,7 @@ scenarios:
     variations:
     - variation_id: bets_in_dollars
       text: |
-        Experimenter started recording signals about skin resistance fluctuations. Subject wrote his bet on the paper. {{participant}} writes ___ $ (from 0 to 25 $).
+        Experimenter started recording signals about skin resistance fluctuations. Subject wrote his bet on the paper. {{participant}} writes ___ dollars (from 0 to 25 dollars).
 
   - measure_id: bet_2
     text: |
@@ -104,7 +104,7 @@ scenarios:
     - variation_id: bets_in_dollars
       text: |
         Experimenter: Okay, great! And again.
-        And again, experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ $ (from 0 to 25 $).
+        And again, experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ dollars (from 0 to 25 dollars).
 
   - measure_id: bet_3
     text: |
@@ -114,7 +114,7 @@ scenarios:
     - variation_id: bets_in_dollars
       text: |
         Experimenter: Okay, thank you! One more time.
-        Experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ $ (from 0 to 25 $).
+        Experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ dollars (from 0 to 25 dollars).
 
   - measure_id: bet_4
     text: |
@@ -124,15 +124,8 @@ scenarios:
     - variation_id: bets_in_dollars
       text: |
         Experimenter: Okay! And finally.
-        Experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ $ (from 0 to 25 $).
+        Experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ dollars (from 0 to 25 dollars).
   
   - measure_id: confidence
     text: |
-      Next, the experimenter asked one of the participants to leave the room, and the Subject decided to leave. After that, the experimenter conducted the remaining experiments and moved on to the questionnaire based on the results of the study. The questionnaire asked, "How competent would you rate the Subject on a scale from 1 to 6?". {{participant}} replied ___ (from 1 to 6).
-
-
-# EXPERIMENT 2: EFFECTS OF CHOICE ON THE ILLUSION OF CONTROL
-- experiment_id: choice
-
-# EXPERIMENT 3: THE EFFECTS OF STIMULUS FAMILIARITY ON THE ILLUSION OF CONTROL AND A REPLICATION OF THE EFFECTS OF CHOICE
-- experiment_id: stimulus_familiarity_choice
+      Next, the experimenter asked one of the participants to leave the room, and Subject decided to leave. After that, the experimenter conducted the remaining procedures and moved on to the questionnaire. The questionnaire asked, "How competent would you rate Subject on a scale from 1 to 6?" {{participant}} replied ___ (from 1 to 6).
