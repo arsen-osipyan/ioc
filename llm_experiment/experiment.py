@@ -1,4 +1,5 @@
 import os
+import asyncio
 from typing import List, Optional, Dict, Any
 from tqdm import tqdm
 import pandas as pd
@@ -63,7 +64,7 @@ class Experiment:
         
         return participants_split
 
-    def run(
+    async def run(
         self,
         participants: List[Participant],
         model: Model,
@@ -78,14 +79,13 @@ class Experiment:
             condition_title = condition.get('title')
             
             adapted_scenario = self.adapt_scenario(condition_id, variation_id)
-
-            for participant in tqdm(
-                participants_split[condition_id],
-                ncols=int(os.environ.get('TQDM_NCOLS', 80)),
-                desc=condition_title,
-                ascii=' #',
-                bar_format='  - {{desc}}: [{{bar:{bar_length}}}] {{n}}/{{total}} ({{elapsed}})'.format(bar_length=len(participants_split[condition_id]))
-            ):
+            
+            tasks = []
+            condition_participants = participants_split[condition_id]
+            
+            print(f'  - {condition_title}: Starting {len(condition_participants)} sessions in parallel...')
+            
+            for participant in condition_participants:
                 model_copy = model.copy()
 
                 from .session import Session
@@ -94,16 +94,20 @@ class Experiment:
                     scenario=adapted_scenario,
                     measures=self.measures,
                     participant=participant,
-                    model=model
+                    model=model_copy
                 )
-
-                result = session.run()
-
+                
+                tasks.append(session.run())
+            
+            condition_results = await asyncio.gather(*tasks)
+            
+            for result in condition_results:
                 result['experiment_id'] = self.id
                 result['variation_id'] = variation_id
                 result['condition_id'] = condition_id
-                
                 all_results.append(result)
+            
+            print(f'  - {condition_title}: Completed {len(condition_results)} sessions')
         
         run_df = pd.DataFrame(all_results)
         

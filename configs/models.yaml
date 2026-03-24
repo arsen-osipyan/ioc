@@ -3,9 +3,9 @@ model_templates:
 - id: default
   default:
     settings:
-      max_retries: 10000
-      retry_delay: 1.0
-      system_message: 'Respond only as the character, continuing their line or filling gaps (___). No extra words.'
+      max_retries: 100
+      retry_delay: 0.1
+      system_message: 'Respond only as the character, continuing their line or filling gaps (___). No extra words. Always write numbers as digits (e.g., 1, 2, 3), not words.'
     params:
       temperature: 1.0
       top_p: 1.0

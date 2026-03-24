@@ -33,7 +33,7 @@ class Session:
     def _format_text(self, text: str) -> str:
         return text.replace('{{participant}}', self.participant.get_title_and_name())
     
-    def run(self) -> Dict[str, Any]:
+    async def run(self) -> Dict[str, Any]:
         prompt = ''
 
         for step in self.scenario:
@@ -52,7 +52,7 @@ class Session:
                     parser = get_parser(measure.get('parser').get('name'), **measure.get('parser').get('params'))
                 
                 try:
-                    answer = self.model.generate(prompt, parser)
+                    answer = await self.model.generate(prompt, parser)
                 except Exception as e:
                     print(e)
                     answer = None

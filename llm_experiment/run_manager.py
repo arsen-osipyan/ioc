@@ -1,5 +1,6 @@
 import os
 import time
+import asyncio
 from typing import List, Dict, Any, Optional
 import pandas as pd
 
@@ -82,8 +83,10 @@ class RunManager:
         
         self._print_run_title(run_title)
         
+        run_timestamp = int(time.time())
+        
         results_folder = os.environ.get('RESULTS_FOLDER', 'results/')
-        run_dir_name = os.path.join(results_folder, run_id)
+        run_dir_name = os.path.join(results_folder, run_id, str(run_timestamp))
         os.makedirs(run_dir_name, exist_ok=True)
         
         for exp_config in run_config.get('experiments', []):
@@ -125,15 +128,14 @@ class RunManager:
                     experiment_variation_title = experiment.get_title(variation_id)
                     print(f'{experiment_variation_title} -> {model.name} -> Iteration {iteration + 1}/{n_iterations}')
                     
-                    experiment_results = experiment.run(
+                    experiment_results = asyncio.run(experiment.run(
                         self.participants,
                         model,
                         variation_id
-                    )
+                    ))
                     
                     if not experiment_results.empty:
-                        timestamp = int(time.time())
-                        filename = f'results_{timestamp}_iter{iteration + 1}.csv'
+                        filename = f'iteration_{iteration + 1}.csv'
                         filepath = os.path.join(model_dir_name, filename)
                         experiment_results.to_csv(filepath, index=False)
                         print(f'Saved results to {filepath}')
@@ -147,8 +149,7 @@ class RunManager:
                         )
             
         if not self.results.empty:
-            timestamp = int(time.time())
-            filename = f'results_{timestamp}.csv'
+            filename = 'results.csv'
             filepath = os.path.join(run_dir_name, filename)
             self.results.to_csv(filepath, index=False)
             print(f'Saved results to {filepath}')

@@ -1,16 +1,16 @@
 import os
 import copy
-import time
+import asyncio
 from typing import List, Any, Dict, Optional
 
-from openai import OpenAI
+from openai import AsyncOpenAI
 
 from .utils.parsers import Parser
 
 
 class Model:
     
-    def __init__(self, model_config: dict):
+    def __init__(self, model_config: dict, client: AsyncOpenAI = None):
         self.id: str = model_config['id']
         self.name: str = model_config.get('name', self.id)
         self.provider: str = model_config.get('provider', 'Unknown')
@@ -22,10 +22,10 @@ class Model:
         self.messages: List[Dict[str, str]] = []
         self._init_messages()
         
-        self.client = OpenAI(
+        self.client = AsyncOpenAI(
             base_url=os.environ.get('OPENROUTER_URL'),
             api_key=os.environ.get('OPENROUTER_API_KEY'),
-        )
+        ) if client is None else client
     
     def _init_messages(self) -> None:
         if 'system_message' in self.settings.keys():
@@ -36,7 +36,7 @@ class Model:
         else:
             self.messages = []
     
-    def _generate_raw(self, prompt: str) -> Optional[str]:
+    async def _generate_raw(self, prompt: str) -> Optional[str]:
         retry_delay = self.settings.get('retry_delay', float(os.environ.get('RETRY_DELAY', '1')))
 
         if not self.client:
@@ -45,7 +45,7 @@ class Model:
         self.messages.append({'role': 'user', 'content': prompt})
 
         try:
-            completion = self.client.chat.completions.create(
+            completion = await self.client.chat.completions.create(
                 model=self.openrouter_model_name,
                 messages=self.messages,
                 **self.params
@@ -60,14 +60,14 @@ class Model:
         except Exception as e:
             self.messages.pop()
             print(e)
-            time.sleep(retry_delay)
+            await asyncio.sleep(retry_delay)
             return None
     
-    def generate(self, prompt: str, parser: Optional[Parser] = None) -> Optional[str]:
+    async def generate(self, prompt: str, parser: Optional[Parser] = None) -> Optional[str]:
         max_retries = self.settings.get('max_retries', int(os.environ.get('MAX_RETRIES', '5')))
         
         for attempt in range(max_retries):
-            response = self._generate_raw(prompt)
+            response = await self._generate_raw(prompt)
             
             if response is None:
                 continue
@@ -78,8 +78,10 @@ class Model:
             parsed_result = parser.parse(response)
             
             if parsed_result is not None:
-                return response
+                return parsed_result
             
+        print(f'Response invalid after {max_retries} attempts. Last response: "{response}".')
+
         return None
     
     def reset_conversation(self) -> None:
@@ -98,4 +100,4 @@ class Model:
             'openrouter_model_name': self.openrouter_model_name,
             'params': self.params,
             'settings': self.settings
-        })
+        }, client=self.client)
