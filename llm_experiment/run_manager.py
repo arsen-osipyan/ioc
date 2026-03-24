@@ -135,6 +135,7 @@ class RunManager:
                     ))
                     
                     if not experiment_results.empty:
+                        experiment_results['iteration_id'] = iteration
                         filename = f'iteration_{iteration + 1}.csv'
                         filepath = os.path.join(model_dir_name, filename)
                         experiment_results.to_csv(filepath, index=False)
