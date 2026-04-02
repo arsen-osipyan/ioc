@@ -7,128 +7,128 @@ runs:
   - experiment_id: competition
     models:
     - model_id: gpt_5_mini
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_r1
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_3_max_thinking
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: lower_emphasis
     models:
     - model_id: gpt_5_mini
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_r1
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_3_max_thinking
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: higher_emphasis
     models:
     - model_id: gpt_5_mini
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_r1
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_3_max_thinking
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: without_emphasis
     models:
     - model_id: gpt_5_mini
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_r1
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_3_max_thinking
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: bets_in_dollars
     models:
     - model_id: gpt_5_mini
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_r1
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_3_max_thinking
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: fully_rational
     models:
     - model_id: gpt_5_mini
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: gpt_5
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_r1
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_3_max_thinking
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
 
 - id: competition_cheap
   title: 'Cheap Run: "Effects of Competition on the Illusion of Control"'
@@ -137,68 +137,68 @@ runs:
   - experiment_id: competition
     models:
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: lower_emphasis
     models:
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: higher_emphasis
     models:
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: without_emphasis
     models:
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: bets_in_dollars
     models:
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
   - experiment_id: competition
     variation_id: fully_rational
     models:
     - model_id: gpt_5_nano
-      n_iterations: 5
+      n_iterations: 3
     - model_id: deepseek_v3.2
-      n_iterations: 5
+      n_iterations: 3
     - model_id: grok_4_fast
-      n_iterations: 5
+      n_iterations: 3
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
 
 - id: competition_test
   title: 'Test Run: "Effects of Competition on the Illusion of Control"'
@@ -232,4 +232,38 @@ runs:
     variation_id: fully_rational
     models:
     - model_id: gpt_5_nano
+      n_iterations: 1
+
+- id: competition_qwen_test
+  title: 'Qwen Turbo Test Run: "Effects of Competition on the Illusion of Control"'
+
+  experiments:
+  - experiment_id: competition
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: lower_emphasis
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: higher_emphasis
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: without_emphasis
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: bets_in_dollars
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: fully_rational
+    models:
+    - model_id: qwen_turbo
       n_iterations: 1

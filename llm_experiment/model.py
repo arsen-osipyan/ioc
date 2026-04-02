@@ -50,7 +50,7 @@ class Model:
                 messages=self.messages,
                 **self.params
             )
-
+            
             response = completion.choices[0].message.content
 
             self.messages.append({'role': 'assistant', 'content': response})
@@ -59,7 +59,7 @@ class Model:
             
         except Exception as e:
             self.messages.pop()
-            print(e)
+            print(f'Error in Model._generate_raw(): {e}')
             await asyncio.sleep(retry_delay)
             return None
     
@@ -78,6 +78,7 @@ class Model:
             parsed_result = parser.parse(response)
             
             if parsed_result is not None:
+                # print(f'<prompt>{prompt}</prompt>\n<response>{response}</response>\n<parsed_result>{str(parsed_result)}</parsed_result>\n\n')
                 return parsed_result
             
         print(f'Response invalid after {max_retries} attempts. Last response: "{response}".')

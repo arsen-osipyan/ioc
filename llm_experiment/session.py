@@ -39,7 +39,7 @@ class Session:
         for step in self.scenario:
             text = self._format_text(step.get('text'))
             if text and text != '':
-                prompt += text + '\n'
+                prompt += text
 
             if step.get('measure_id'):
                 if not filter(lambda m: m['id'] == step.get('measure_id'), self.measures):
@@ -54,7 +54,7 @@ class Session:
                 try:
                     answer = await self.model.generate(prompt, parser)
                 except Exception as e:
-                    print(e)
+                    print(f'Error in Session.run(): {e}')
                     answer = None
                 
                 self.result[step.get('measure_id')] = answer

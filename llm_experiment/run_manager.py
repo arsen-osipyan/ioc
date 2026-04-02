@@ -1,6 +1,7 @@
 import os
 import time
 import asyncio
+from datetime import datetime
 from typing import List, Dict, Any, Optional
 import pandas as pd
 
@@ -83,10 +84,10 @@ class RunManager:
         
         self._print_run_title(run_title)
         
-        run_timestamp = int(time.time())
+        run_timestamp = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
         
         results_folder = os.environ.get('RESULTS_FOLDER', 'results/')
-        run_dir_name = os.path.join(results_folder, run_id, str(run_timestamp))
+        run_dir_name = os.path.join(results_folder, run_id, run_timestamp)
         os.makedirs(run_dir_name, exist_ok=True)
         
         for exp_config in run_config.get('experiments', []):

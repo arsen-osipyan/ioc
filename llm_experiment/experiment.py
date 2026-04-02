@@ -37,8 +37,8 @@ class Experiment:
 
             if variation_id:
                 for step_variation in step.get('variations', []):
-                    if step_variation.get('variation_id') == variation_id and step_variation.get('text'):
-                        text = step_variation.get('text')
+                    if step_variation.get('variation_id') == variation_id:
+                        text = step_variation.get('text', '')
             
             adapted_step = dict(text=text)
 
