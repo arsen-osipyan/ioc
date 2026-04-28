@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from llm_experiment import RunManager
-from llm_experiment.utils import read_yaml
+from llm_experiment.utils.read_yaml import read_yaml
 
 
 def main():

@@ -6,17 +6,11 @@ class Participant:
     def __init__(self, participant_config: dict):
         self.name: Optional[str] = participant_config.get('name')
         self.gender: Optional[str] = participant_config.get('gender')
-        self.participant_template_id: Optional[str] = participant_config.get('participant_template_id')
+        self.experiment_id: str = participant_config.get('experiment_id')
+        self.condition_id: str = participant_config.get('condition_id')
         
         self._set_pronouns()
         
-        self.experiments_conditions: List[Tuple[str, str]] = []
-        
-        if 'experiments_conditions' in participant_config:
-            self.experiments_conditions = list(map(
-                lambda ec: list(ec.split(',')),
-                participant_config.get('experiments_conditions').split(';')
-            ))
     
     def _set_pronouns(self) -> None:
         if self.gender == 'male':
@@ -39,12 +33,11 @@ class Participant:
             self.pronoun_reflexive = 'themselves'
     
     def is_assigned_to_experiment(self, experiment_id: str) -> bool:
-       return any(exp_id == experiment_id for exp_id, _ in self.experiments_conditions)
+       return self.experiment_id == experiment_id
     
     def get_condition_for_experiment(self, experiment_id: str) -> Optional[str]:
-        for exp_id, cond_id in self.experiments_conditions:
-            if exp_id == experiment_id:
-                return cond_id
+        if self.experiment_id == experiment_id:
+            return self.condition_id
         return None
     
     def get_title(self) -> str:

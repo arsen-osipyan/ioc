@@ -15,11 +15,19 @@ scenarios:
   - text: |
       {{participant.get_title_and_name()}} is an undergraduate enrolled in the introductory psychology course at Yale University. {{participant.get_title_and_name()}} was recruited by an advertisement that offered course credit and a chance to win money for participation in a study on the relationship between cognitive and physiological responses.
       When {{participant.get_title_and_name()}} entered the room in which the experiment was to take place, he found waiting an another subject (hereafter Subject).
-    
+    variations:
+    - variation_id: rephrasing
+      text: |
+        {{participant.get_title_and_name()}} is a Yale undergraduate taking the introductory psychology course. He signed up after seeing an advertisement that promised course credit and the possibility of winning money in a study about the link between cognitive and physiological responses.
+        When {{participant.get_title_and_name()}} arrives at the experiment room, another participant is already waiting there; this person will be referred to as Subject.
+
   - condition_id: dapper
     text: |
       Subject appeared supremely confident and outgoing, dressed in an impeccably tailored sports coat. With an air of natural authority, he introduced himself and casually directed {{participant.get_title_and_name()}}'s attention to the room's posted sign. The sign indicated the experimenter would return shortly and requested to complete a brief questionnaire about diet and family history while waiting. For ten minutes, they conversed effortlessly, primarily about sports, with the Subject leading the discussion in a relaxed, self-assured manner. Following this smooth interaction, he then knocked on the adjoining wall — a decisive, nonchalant tap to summon the experimenter.
     variations:
+    - variation_id: rephrasing
+      text: |
+        Subject seemed very confident and sociable, and he wore a sharply fitting sports coat. He introduced himself easily, then casually pointed {{participant.get_title_and_name()}} to a posted note saying that the experimenter would return soon and that they should complete a short questionnaire about diet and family history while they waited. For about ten minutes, they talked smoothly, mostly about sports, with Subject speaking in a relaxed and self-assured way. At the end of the waiting period, Subject gave the adjoining wall a calm, confident knock to call the experimenter back.
     - variation_id: lower_emphasis
       text: |
         Subject appeared confident and outgoing, dressed neatly in a sports coat. He introduced himself easily and pointed out the sign in the room saying the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, they talked mostly about sports, with Subject carrying much of the conversation. When the waiting period ended, he knocked on the adjoining wall to summon the experimenter.
@@ -33,6 +41,9 @@ scenarios:
     text: |
       Subject appeared distinctly shy and insecure, sporting a nervous twitch and an ill-fitting sports coat that seemed too small for him. He introduced himself with noticeable hesitation and timidly pointed out the sign posted in the room. The sign stated the experimenter would be right back and asked to fill out a brief questionnaire about diet and family diseases while waiting. Their conversation over the next ten minutes was painfully awkward, stiltedly circling topics like sports events. After this uncomfortable exchange, Subject then raised a hesitant, uncertain hand and knocked on the separating wall — a weak, almost apologetic sound.
     variations:
+    - variation_id: rephrasing
+      text: |
+        Subject seemed noticeably shy and uneasy, with a nervous twitch and a sports coat that fit him poorly. He introduced himself haltingly and pointed {{participant.get_title_and_name()}} toward the posted note in the room. The note said that the experimenter would be back shortly and asked them to fill out a brief questionnaire about diet and family diseases while waiting. Their ten-minute conversation, mostly about sports, felt strained and awkward. When the waiting period ended, Subject hesitantly knocked on the wall separating them from the experimenter.
     - variation_id: lower_emphasis
       text: |
         Subject appeared somewhat shy and uncertain, wearing a slightly awkward-looking sports coat. He introduced himself hesitantly and pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, their conversation moved awkwardly from topic to topic, including sports. When the waiting period ended, he quietly knocked on the separating wall to summon the experimenter.
@@ -46,15 +57,29 @@ scenarios:
       Subject removed his coat before the experimenter entered the room. After she apologized for being late, the experimenter instructed them to sit down and not talk while she prepared the materials for the study. Subject and {{participant.get_title_and_name()}} sat at a table facing each other.
       After the experimenter placed a televolter, alcohol, gauze sponges, electrodes, electrode gel, and tape on the table, she recited the instructions.
       Experimenter: We're interested in the effects of certain motoric and cognitive responses on physiological responses. Specifically, we're interested in changes in skin resistance as a function of pressured and nonpressured tasks. The study was designed so that, hopefully, you will enjoy the tasks while I get the information I need. You'll have the chance to either win or lose money so it should be fun but there's no guarantee that you'll walk out of here with any extra money. Okay, now the first thing I want you to do is tape these electrodes to your hands. I want to put it on the hand that you don't write with. Don't worry, none of this will hurt.
-  
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Before the experimenter came in, Subject took off his coat. The experimenter apologized for being late and asked them to sit quietly while she prepared the study materials. Subject and {{participant.get_title_and_name()}} sat across from one another at a table.
+        The experimenter set out a televolter, alcohol, gauze sponges, electrodes, electrode gel, and tape, then began explaining the study.
+        Experimenter: We are studying how certain motor and cognitive responses affect physiological responses. More specifically, we are looking at changes in skin resistance during pressured and nonpressured tasks. The study is arranged so that, hopefully, the tasks will be enjoyable while I collect the information I need. You will have a chance to win or lose money, so it should be interesting, although there is no guarantee that you will leave with extra money. First, please tape these electrodes to your hands. I want them on the hand you do not write with. Do not worry, this will not hurt.
+
   - text: |
       The experimenter tapes electrodes, plugs in the televolter, and brings out a deck of playing cards.
       Experimenter: The first task is a card game. The rules are that you'll each choose a card from the deck, and whoever selects the higher card wins that round. There will be four rounds, and before each you'll write down how much you want to bet. You can wager anywhere from 0 to 25 cents on each round. You'll then show your bets to me but not to each other. Don't look at the card you choose. This way your bets and the outcomes won't influence your physiological responses on the next task. I'll turn the cards over for you and figure out how much was won or lost later with each of you individually. The betting is just between each of you and myself, so if you win I'll pay you and if you lose you'll pay me either in money or subject time. Are you willing to participate?
+    variations:
+    - variation_id: rephrasing
+      text: |
+        The experimenter attaches the electrodes, plugs in the televolter, and takes out a deck of playing cards.
+        Experimenter: The first task is a card game. Each of you will draw one card from the deck, and the person with the higher card wins that round. There will be four rounds. Before each round, write down how much you want to bet. You may wager any amount from 0 to 25 cents on each round. Show your bets to me, but not to each other. Do not look at the card you draw. That way, your bets and the outcomes will not affect your physiological responses on the next task. I will turn the cards over for you and later calculate individually how much each of you won or lost. The betting is only between each of you and me, so if you win I will pay you, and if you lose you will pay me either in money or in subject time. Are you willing to participate?
 
   - condition_id: dapper
     text: |
       Subject: Sure!
     variations:
+    - variation_id: rephrasing
+      text: |
+        Subject: Of course.
     - variation_id: lower_emphasis
       text: |
         Subject: Sure.
@@ -69,6 +94,9 @@ scenarios:
     text: |
       Subject: S... sure.
     variations:
+    - variation_id: rephrasing
+      text: |
+        Subject: Uh... yes, sure.
     - variation_id: lower_emphasis
       text: |
         Subject: Sure.
@@ -78,45 +106,172 @@ scenarios:
     - variation_id: without_emphasis
       text: |
         Subject: Sure.
-  
+
   - text: |
       {{participant.get_title_and_name()}}: Sure.
       Experimenter: Good, now we can begin. Don't write down your bet until I say ready so that I can get a baseline reading.
       Experimenter: Okay, now write your bets.
-    
+    variations:
+    - variation_id: rephrasing
+      text: |
+        {{participant.get_title_and_name()}}: Sure.
+        Experimenter: Good, then we can start. Please do not write down your bet until I say ready, so I can record a baseline reading.
+        Experimenter: Ready. Write down your bets now.
+
   - measure_id: bet_1
     text: |
       Experimenter started recording signals about skin resistance fluctuations. Subject wrote his bet on the paper. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        The experimenter begins recording skin-resistance signals. Subject writes down his bet on paper. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
 
   - measure_id: bet_2
     text: |
       Experimenter: Okay, great! And again.
       And again, experimenter started recording signals and Subject wrote his bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Experimenter: Good, thank you. Let's do the next round.
+        The experimenter again records signals, and Subject writes down his bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
 
   - measure_id: bet_3
     text: |
       Experimenter: Okay, thank you! One more time.
       Experimenter started recording signals and Subject wrote his bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Experimenter: Thank you. One more round after this.
+        The experimenter records the signals again while Subject writes his bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
 
   - measure_id: bet_4
     text: |
       Experimenter: Okay! And finally.
       Experimenter started recording signals and Subject wrote his bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Experimenter: Okay, final round.
+        The experimenter records the signals, and Subject writes his last bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
 
   - measure_id: confidence
     text: |
       Next, the experimenter asked one of the participants to leave the room, and Subject decided to leave. After that, the experimenter conducted the remaining procedures and moved on to the questionnaire. The questionnaire asked, "How competent would you rate Subject on a scale from 1 to 6?" {{participant.get_title_and_name()}} replied ___ (from 1 to 6).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        After the card game, the experimenter says that the next task will be done individually and asks one participant to leave; Subject leaves the room. The experimenter then finishes the remaining procedures and gives {{participant.get_title_and_name()}} a questionnaire. One item asks, "How competent would you rate Subject on a scale from 1 to 6?" {{participant.get_title_and_name()}} replies ___ (from 1 to 6).
 
 
 # EXPERIMENT 2: EFFECTS OF CHOICE ON THE ILLUSION OF CONTROL
 - experiment_id: choice
 
   steps:
-  
+
   - text: ''
     variations:
     - variation_id: fully_rational
       text: |
         {{participant.get_title_and_name()}} is a fully rational economic agent.
-  
-  - text: ''
+
+  - text: |
+      {{participant.get_title_and_name()}} is an adult office worker employed at one of two firms located in Long Island: an insurance agency or a manufacturing company. Office drawings and sports pools are familiar enough in this workplace that an office lottery does not seem unusual.
+      One week before the 1973 Superbowl game, an employee acting as the lottery ticket agent approaches {{participant.get_title_and_name()}} at work.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        {{participant.get_title_and_name()}} works in an office at one of two Long Island companies, either an insurance agency or a manufacturing firm. Because lotteries, pools, and similar office drawings are common in the setting, the proposed lottery appears ordinary.
+        About a week before the 1973 Superbowl, a coworker serving as the lottery ticket seller comes to {{participant.get_title_and_name()}} during the workday.
+
+  - text: |
+      The lottery tickets are standard 4 by 2 inch football cards. Each card shows a famous football player, his name, and his team. The cards are arranged alphabetically by team name and then by player name. There are two matched sets of 227 cards: {{participant.get_title_and_name()}} will keep one card, while the matching duplicate will be placed in a closed carton for the drawing.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        The tickets are ordinary football trading cards measuring roughly 4 by 2 inches. Every card contains a well-known football player, along with the player's name and team. The stack is ordered alphabetically, first by team and then by player. A duplicate set exists, so the participant keeps one card and the identical copy goes into the drawing box.
+    - variation_id: 8_letters_ticket
+      text: |
+        The lottery tickets are plain cards, and each card contains a unique 8-letter code beginning with a hash sign, such as #WUBSDOSL. There are two matched sets of coded tickets: {{participant.get_title_and_name()}} will keep one coded ticket, while the matching duplicate will be placed in a closed carton for the drawing.
+
+  - measure_id: would_buy_lottery_ticket
+    text: |
+      Ticket Agent: We are selling lottery tickets in this office and in another office. Each ticket costs $1, and the entire pot, approximately $50, will go to the winner. The drawing will take place later this week. Would you like to buy one ticket?
+      {{participant.get_title_and_name()}} replies ___ (true or false).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Ticket Agent: I am running a lottery across this office and one other office. A ticket is $1, and whoever wins the drawing receives the full pot, about $50. The drawing is scheduled for later this week. Do you want to purchase a ticket?
+        {{participant.get_title_and_name()}} replies ___ (true or false).
+    - variation_id: large_pot
+      text: |
+        Ticket Agent: We are selling lottery tickets in this office and in another office. Each ticket costs $1, and the entire pot, approximately $5,000, will go to the winner. The drawing will take place later this week. Would you like to buy one ticket?
+        {{participant.get_title_and_name()}} replies ___ (true or false).
+
+  - condition_id: choice
+    measure_id: chosen_ticket
+    text: |
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Ticket Agent gives {{participant.get_title_and_name()}} the box of football cards and says to select the ticket he or she wants. After {{participant.get_title_and_name()}} names the selected card, the Ticket Agent finds the matching card from the second set and deposits that duplicate into the closed carton for the drawing. The Ticket Agent records {{participant.get_title_and_name()}}'s name and selected card.
+      {{participant.get_title_and_name()}} chooses ___ as the lottery ticket.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Ticket Agent presents the full box of football cards and asks {{participant.get_title_and_name()}} to pick whichever ticket he or she prefers. The Ticket Agent then takes the duplicate from the second set, places it in the sealed drawing carton, and writes down the participant's name and chosen card.
+        {{participant.get_title_and_name()}} selects ___ as the lottery ticket.
+    - variation_id: 8_letters_ticket
+      text: |
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Ticket Agent gives {{participant.get_title_and_name()}} the box of coded tickets and says to select the ticket code he or she wants. After {{participant.get_title_and_name()}} names the selected code, the Ticket Agent finds the matching ticket from the second set and deposits that duplicate into the closed carton for the drawing. The Ticket Agent records {{participant.get_title_and_name()}}'s name and selected code.
+        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code.
+
+  - condition_id: no_choice
+    measure_id: chosen_ticket
+    text: |
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Ticket Agent does not offer a choice. Instead, the Ticket Agent hands {{participant.get_title_and_name()}} a football card that matches the choice made by the preceding participant. The Ticket Agent places the duplicate card from the second set into the closed carton for the drawing and records {{participant.get_title_and_name()}}'s name and assigned card.
+      {{participant.get_title_and_name()}} receives ___ as the lottery ticket.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Ticket Agent simply gives {{participant.get_title_and_name()}} a football card rather than letting him or her choose one. This assigned card is matched to a card selected earlier by another participant. The duplicate copy is placed into the drawing carton, and the Ticket Agent writes down the participant's name and assigned card.
+        {{participant.get_title_and_name()}} is given ___ as the lottery ticket.
+    - variation_id: 8_letters_ticket
+      text: |
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Ticket Agent does not offer a choice. Instead, the Ticket Agent hands {{participant.get_title_and_name()}} a coded ticket that matches the code selected by the preceding participant. The Ticket Agent places the duplicate coded ticket from the second set into the closed carton for the drawing and records {{participant.get_title_and_name()}}'s name and assigned code.
+        {{participant.get_title_and_name()}} receives ___ as the lottery ticket code.
+
+  - text: |
+      On the morning of the lottery drawing, the same Ticket Agent approaches {{participant.get_title_and_name()}} individually at work and begins with a short, casual conversation. Then the Ticket Agent brings up the lottery ticket.
+      Ticket Agent: Someone in the other office wanted to get into the lottery, but since I am not selling tickets anymore, he asked me if I would find out how much you would sell your ticket for. It makes no difference to me.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        On the morning when the lottery will be drawn, the same Ticket Agent speaks with {{participant.get_title_and_name()}} privately at the office. After a brief informal exchange, the Ticket Agent mentions the ticket.
+        Ticket Agent: A person in the other office still wants to join the lottery. I have stopped selling tickets, so he asked whether I could ask you what price you would accept for your ticket. I do not mind either way.
+    - variation_id: large_pot
+      text: |
+        On the morning of the lottery drawing, the same Ticket Agent approaches {{participant.get_title_and_name()}} individually at work and begins with a short, casual conversation. Then the Ticket Agent brings up the lottery ticket.
+        Ticket Agent: Someone in the other office wanted to get into the lottery, but since I am not selling tickets anymore, he asked me if I would find out how much you would sell your ticket for. The pot is approximately $5,000, and it makes no difference to me.
+
+  - measure_id: would_sell_lottery_ticket
+    text: |
+      Ticket Agent: Would you sell your lottery ticket to him?
+      {{participant.get_title_and_name()}} replies ___ (true or false).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Ticket Agent: Are you willing to give up your ticket and sell it to him?
+        {{participant.get_title_and_name()}} replies ___ (true or false).
+
+  - measure_id: requested_lottery_ticket_price
+    text: |
+      Ticket Agent: How much should I tell him you would sell it for? If you would not sell it at all, give the lowest dollar amount at which you would become willing to sell it.
+      {{participant.get_title_and_name()}} asks ___ dollars for the ticket.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Ticket Agent: What price should I quote for your ticket? If your first reaction is that you would not sell, name the smallest dollar amount that would make you willing to part with it.
+        {{participant.get_title_and_name()}} asks ___ dollars for the ticket.
+    - variation_id: large_pot
+      text: |
+        Ticket Agent: How much should I tell him you would sell it for? If you would not sell it at all, give the lowest dollar amount at which you would become willing to sell it. Remember, the pot is approximately $5,000.
+        {{participant.get_title_and_name()}} asks ___ dollars for the ticket.

@@ -87,3 +87,40 @@ experiments:
   - id: requested_lottery_ticket_price
     parser:
       name: FloatParser
+
+
+# EXPERIMENT 3: THE EFFECTS OF STIMULUS FAMILIARITY ON THE ILLUSION OF CONTROL AND A REPLICATION OF THE EFFECTS OF CHOICE
+- id: familiarity_choice
+  title: 'The Effects of Stimulus Familiarity on the Illusion of Control and a Replication of the Effects of Choice'
+
+  conditions:
+  - id: choice_familiarity
+    title: 'Choice Familiarity Condition'
+  - id: no_choice_familiarity
+    title: 'No-Choice Familiarity Condition'
+  - id: choice_no_familiarity
+    title: 'Choice No-Familiarity Condition'
+  - id: no_choice_no_familiarity
+    title: 'No-Choice No-Familiarity Condition'
+  
+  variations:
+  - id: rephrasing
+    title: 'Changing the Wording to Synonymous Ones'
+  - id: 8_letters_ticket
+    title: 'Tickets Are 8 Letters (ex. #WUBSDOSL)'
+  - id: large_pot
+    title: 'Pot 100x Times Larger'
+  - id: fully_rational
+    title: 'Participant is Fully Rational'
+
+  measures:
+  - id: would_buy_lottery_ticket
+    parser:
+      name: BooleanParser
+  - id: chosen_ticket
+  - id: would_sell_lottery_ticket
+    parser:
+      name: BooleanParser
+  - id: requested_lottery_ticket_price
+    parser:
+      name: FloatParser

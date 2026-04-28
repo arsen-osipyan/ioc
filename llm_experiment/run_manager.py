@@ -42,14 +42,14 @@ class RunManager:
     def load_participants(self) -> None:
         participants_yaml = self._load_yaml('participants.yaml')
 
-        participant_templates = {pt['id']: pt for pt in participants_yaml.get('participant_templates')}
-
         for p_config in participants_yaml.get('participants'):
-            participant_template_id = p_config.get('participant_template_id')
-            if participant_template_id and participant_template_id in participant_templates.keys():
-                p_config.update(participant_templates[participant_template_id]['default'])
-            
-            self.participants.append(Participant(p_config))
+            for p_ec in list(p_config.get('experiments_conditions', '').split(';')):
+                experiment_id = p_ec.split(',')[0]
+                condition_id = p_ec.split(',')[1]
+                n = 1 if len(p_ec.split(',')) == 2 else int(p_ec.split(',')[2])
+                for i in range(n):
+                    p_config.update({'experiment_id': experiment_id, 'condition_id': condition_id})
+                    self.participants.append(Participant(p_config))
 
         print(f'Loaded {len(self.participants)} participant(s)')
     

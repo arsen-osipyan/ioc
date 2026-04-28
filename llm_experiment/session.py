@@ -4,7 +4,7 @@ import re
 from .participant import Participant
 from .model import Model
 from .utils.parsers import get_parser
-from .utils.generators import get_random_football_player, get_random_8_letters
+from .utils.generators import get_random_football_player, get_random_8_letters, get_random_8_symbols
 
 if TYPE_CHECKING:
     from .experiment import Experiment
@@ -76,5 +76,5 @@ class Session:
                 self.result[step.get('measure_id')] = answer
                 
                 prompt = ''
-        
+
         return self.result
