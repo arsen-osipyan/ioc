@@ -1,8 +1,10 @@
-from typing import Dict, Any, Optional, List, TYPE_CHECKING
+from typing import Dict, Any, Optional, List, TYPE_CHECKING, Callable
+import re
 
 from .participant import Participant
 from .model import Model
 from .utils.parsers import get_parser
+from .utils.generators import get_random_football_player, get_random_8_letters
 
 if TYPE_CHECKING:
     from .experiment import Experiment
@@ -31,7 +33,21 @@ class Session:
         self.result.update(self.model.to_dict())        
     
     def _format_text(self, text: str) -> str:
-        return text.replace('{{participant}}', self.participant.get_title_and_name())
+        _globals = globals()
+
+        def replace(match):
+            expr = match.group(1).strip()
+            if expr.startswith('participant.'):
+                name = expr[len('participant.'):]
+                is_call = name.endswith('()')
+                attr = getattr(self.participant, name[:-2] if is_call else name, None)
+                return str(attr() if is_call else attr) if attr is not None else match.group(0)
+            if expr.endswith('()'):
+                func = _globals.get(expr[:-2])
+                return str(func()) if callable(func) else match.group(0)
+            return match.group(0)
+
+        return re.sub(r'\{\{(.+?)\}\}', replace, text)
     
     async def run(self) -> Dict[str, Any]:
         prompt = ''

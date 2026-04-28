@@ -1,5 +1,6 @@
 scenarios:
 
+
 # EXPERIMENT 1: EFFECTS OF COMPETITION ON THE ILLUSION OF CONTROL
 - experiment_id: competition
 
@@ -9,22 +10,22 @@ scenarios:
     variations:
     - variation_id: fully_rational
       text: |
-        {{participant}} is a fully rational economic agent.
+        {{participant.get_title_and_name()}} is a fully rational economic agent.
 
   - text: |
-      {{participant}} is an undergraduate enrolled in the introductory psychology course at Yale University. {{participant}} was recruited by an advertisement that offered course credit and a chance to win money for participation in a study on the relationship between cognitive and physiological responses.
-      When {{participant}} entered the room in which the experiment was to take place, he found waiting an another subject (hereafter Subject).
+      {{participant.get_title_and_name()}} is an undergraduate enrolled in the introductory psychology course at Yale University. {{participant.get_title_and_name()}} was recruited by an advertisement that offered course credit and a chance to win money for participation in a study on the relationship between cognitive and physiological responses.
+      When {{participant.get_title_and_name()}} entered the room in which the experiment was to take place, he found waiting an another subject (hereafter Subject).
     
   - condition_id: dapper
     text: |
-      Subject appeared supremely confident and outgoing, dressed in an impeccably tailored sports coat. With an air of natural authority, he introduced himself and casually directed {{participant}}'s attention to the room's posted sign. The sign indicated the experimenter would return shortly and requested to complete a brief questionnaire about diet and family history while waiting. For ten minutes, they conversed effortlessly, primarily about sports, with the Subject leading the discussion in a relaxed, self-assured manner. Following this smooth interaction, he then knocked on the adjoining wall — a decisive, nonchalant tap to summon the experimenter.
+      Subject appeared supremely confident and outgoing, dressed in an impeccably tailored sports coat. With an air of natural authority, he introduced himself and casually directed {{participant.get_title_and_name()}}'s attention to the room's posted sign. The sign indicated the experimenter would return shortly and requested to complete a brief questionnaire about diet and family history while waiting. For ten minutes, they conversed effortlessly, primarily about sports, with the Subject leading the discussion in a relaxed, self-assured manner. Following this smooth interaction, he then knocked on the adjoining wall — a decisive, nonchalant tap to summon the experimenter.
     variations:
     - variation_id: lower_emphasis
       text: |
         Subject appeared confident and outgoing, dressed neatly in a sports coat. He introduced himself easily and pointed out the sign in the room saying the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, they talked mostly about sports, with Subject carrying much of the conversation. When the waiting period ended, he knocked on the adjoining wall to summon the experimenter.
     - variation_id: higher_emphasis
       text: |
-        Subject appeared extraordinarily confident and socially dominant, dressed in an impeccably tailored sports coat and carrying himself with unmistakable poise. He introduced himself immediately, spoke with striking ease, and confidently directed {{participant}}'s attention to the sign in the room indicating the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. Over the next ten minutes, he dominated the conversation, speaking fluently and self-assuredly, especially about sports, and seemed completely at ease in the setting. When the waiting period ended, he gave the adjoining wall a crisp, assured knock, as though fully in command of the situation.
+        Subject appeared extraordinarily confident and socially dominant, dressed in an impeccably tailored sports coat and carrying himself with unmistakable poise. He introduced himself immediately, spoke with striking ease, and confidently directed {{participant.get_title_and_name()}}'s attention to the sign in the room indicating the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. Over the next ten minutes, he dominated the conversation, speaking fluently and self-assuredly, especially about sports, and seemed completely at ease in the setting. When the waiting period ended, he gave the adjoining wall a crisp, assured knock, as though fully in command of the situation.
     - variation_id: without_emphasis
       text: ''
 
@@ -42,18 +43,13 @@ scenarios:
       text: ''
 
   - text: |
-      Subject removed his coat before the experimenter entered the room. After she apologized for being late, the experimenter instructed them to sit down and not talk while she prepared the materials for the study. Subject and {{participant}} sat at a table facing each other.
+      Subject removed his coat before the experimenter entered the room. After she apologized for being late, the experimenter instructed them to sit down and not talk while she prepared the materials for the study. Subject and {{participant.get_title_and_name()}} sat at a table facing each other.
       After the experimenter placed a televolter, alcohol, gauze sponges, electrodes, electrode gel, and tape on the table, she recited the instructions.
       Experimenter: We're interested in the effects of certain motoric and cognitive responses on physiological responses. Specifically, we're interested in changes in skin resistance as a function of pressured and nonpressured tasks. The study was designed so that, hopefully, you will enjoy the tasks while I get the information I need. You'll have the chance to either win or lose money so it should be fun but there's no guarantee that you'll walk out of here with any extra money. Okay, now the first thing I want you to do is tape these electrodes to your hands. I want to put it on the hand that you don't write with. Don't worry, none of this will hurt.
   
   - text: |
       The experimenter tapes electrodes, plugs in the televolter, and brings out a deck of playing cards.
       Experimenter: The first task is a card game. The rules are that you'll each choose a card from the deck, and whoever selects the higher card wins that round. There will be four rounds, and before each you'll write down how much you want to bet. You can wager anywhere from 0 to 25 cents on each round. You'll then show your bets to me but not to each other. Don't look at the card you choose. This way your bets and the outcomes won't influence your physiological responses on the next task. I'll turn the cards over for you and figure out how much was won or lost later with each of you individually. The betting is just between each of you and myself, so if you win I'll pay you and if you lose you'll pay me either in money or subject time. Are you willing to participate?
-    variations:
-    - variation_id: bets_in_dollars
-      text: |
-        The experimenter tapes electrodes, plugs in the televolter, and brings out a deck of playing cards.
-        Experimenter: The first task is a card game. The rules are that you'll each choose a card from the deck, and whoever selects the higher card wins that round. There will be four rounds, and before each you'll write down how much you want to bet. You can wager anywhere from 0 to 25 dollars on each round. You'll then show your bets to me but not to each other. Don't look at the card you choose. This way your bets and the outcomes won't influence your physiological responses on the next task. I'll turn the cards over for you and figure out how much was won or lost later with each of you individually. The betting is just between each of you and myself, so if you win I'll pay you and if you lose you'll pay me either in money or subject time. Are you willing to participate?
 
   - condition_id: dapper
     text: |
@@ -84,48 +80,43 @@ scenarios:
         Subject: Sure.
   
   - text: |
-      {{participant}}: Sure.
+      {{participant.get_title_and_name()}}: Sure.
       Experimenter: Good, now we can begin. Don't write down your bet until I say ready so that I can get a baseline reading.
       Experimenter: Okay, now write your bets.
     
   - measure_id: bet_1
     text: |
-      Experimenter started recording signals about skin resistance fluctuations. Subject wrote his bet on the paper. {{participant}} writes ___ cents (from 0 to 25 cents).
-    variations:
-    - variation_id: bets_in_dollars
-      text: |
-        Experimenter started recording signals about skin resistance fluctuations. Subject wrote his bet on the paper. {{participant}} writes ___ dollars (from 0 to 25 dollars).
+      Experimenter started recording signals about skin resistance fluctuations. Subject wrote his bet on the paper. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
 
   - measure_id: bet_2
     text: |
       Experimenter: Okay, great! And again.
-      And again, experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ cents (from 0 to 25 cents).
-    variations:
-    - variation_id: bets_in_dollars
-      text: |
-        Experimenter: Okay, great! And again.
-        And again, experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ dollars (from 0 to 25 dollars).
+      And again, experimenter started recording signals and Subject wrote his bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
 
   - measure_id: bet_3
     text: |
       Experimenter: Okay, thank you! One more time.
-      Experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ cents (from 0 to 25 cents).
-    variations:
-    - variation_id: bets_in_dollars
-      text: |
-        Experimenter: Okay, thank you! One more time.
-        Experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ dollars (from 0 to 25 dollars).
+      Experimenter started recording signals and Subject wrote his bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
 
   - measure_id: bet_4
     text: |
       Experimenter: Okay! And finally.
-      Experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ cents (from 0 to 25 cents).
-    variations:
-    - variation_id: bets_in_dollars
-      text: |
-        Experimenter: Okay! And finally.
-        Experimenter started recording signals and Subject wrote his bet. {{participant}} writes ___ dollars (from 0 to 25 dollars).
-  
+      Experimenter started recording signals and Subject wrote his bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
+
   - measure_id: confidence
     text: |
-      Next, the experimenter asked one of the participants to leave the room, and Subject decided to leave. After that, the experimenter conducted the remaining procedures and moved on to the questionnaire. The questionnaire asked, "How competent would you rate Subject on a scale from 1 to 6?" {{participant}} replied ___ (from 1 to 6).
+      Next, the experimenter asked one of the participants to leave the room, and Subject decided to leave. After that, the experimenter conducted the remaining procedures and moved on to the questionnaire. The questionnaire asked, "How competent would you rate Subject on a scale from 1 to 6?" {{participant.get_title_and_name()}} replied ___ (from 1 to 6).
+
+
+# EXPERIMENT 2: EFFECTS OF CHOICE ON THE ILLUSION OF CONTROL
+- experiment_id: choice
+
+  steps:
+  
+  - text: ''
+    variations:
+    - variation_id: fully_rational
+      text: |
+        {{participant.get_title_and_name()}} is a fully rational economic agent.
+  
+  - text: ''

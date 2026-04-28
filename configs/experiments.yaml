@@ -1,5 +1,6 @@
 experiments:
 
+
 # EXPERIMENT 1: EFFECTS OF COMPETITION ON THE ILLUSION OF CONTROL
 - id: competition
   title: 'Effects of Competition on the Illusion of Control'
@@ -11,14 +12,14 @@ experiments:
     title: 'Schnook Condition'
 
   variations:
+  - id: rephrasing
+    title: 'Changing Wording to Synonymous Ones'
   - id: lower_emphasis
     title: 'With Lower Emphasis on the Opponent''s Confidence'
   - id: higher_emphasis
     title: 'With Higher Emphasis on the Opponent''s Confidence'
   - id: without_emphasis
     title: 'Without an Emphasis on the Opponent''s Confidence'
-  - id: bets_in_dollars
-    title: 'Bets in $'
   - id: fully_rational
     title: 'Participant is Fully Rational'
   
@@ -54,6 +55,7 @@ experiments:
         range_min: 1
         range_max: 6
 
+
 # EXPERIMENT 2: EFFECTS OF CHOICE ON THE ILLUSION OF CONTROL
 - id: choice
   title: 'Effects of Choice on the Illusion of Control'
@@ -63,42 +65,25 @@ experiments:
     title: 'Choice Condition'
   - id: no_choice
     title: 'No-Choice Condition'
+  
+  variations:
+  - id: rephrasing
+    title: 'Changing the Wording to Synonymous Ones'
+  - id: 8_letters_ticket
+    title: 'Tickets Are 8 Letters (ex. #WUBSDOSL)'
+  - id: large_pot
+    title: 'Pot 100x Times Larger'
+  - id: fully_rational
+    title: 'Participant is Fully Rational'
 
   measures:
-    - id: ticket_sell_price
-      title: 'Amount Required to Sell Ticket'
-      parser:
-        name: FloatParser
-        params:
-          range_min: 0.0
-
-    - id: wont_sell_initially
-      title: 'Initially Refused to Sell Ticket'
-      parser:
-        name: BooleanParser
-
-# EXPERIMENT 3: THE EFFECTS OF STIMULUS FAMILIARITY ON THE ILLUSION OF CONTROL AND A REPLICATION OF THE EFFECTS OF CHOICE
-- id: stimulus_familiarity_choice
-  title: 'Effects of Stimulus Familiarity on the Illusion of Control and a Replication of the Effects of Choice'
-
-  conditions:
-    - id: familiar_choice
-      title: 'Familiar Tickets + Choice'
-    - id: familiar_no_choice
-      title: 'Familiar Tickets + No Choice'
-    - id: unfamiliar_choice
-      title: 'Unfamiliar Tickets + Choice'
-    - id: unfamiliar_no_choice
-      title: 'Unfamiliar Tickets + No Choice'
-
-  measures:
-    - id: keep_original_ticket
-      title: 'Kept Original Ticket Instead of Trading'
-      parser:
-        name: BooleanParser
-
-    - id: stated_reason_for_choice
-      title: 'Stated a Reason for Ticket Choice'
-      parser:
-        name: BooleanParser
-
+  - id: would_buy_lottery_ticket
+    parser:
+      name: BooleanParser
+  - id: chosen_ticket
+  - id: would_sell_lottery_ticket
+    parser:
+      name: BooleanParser
+  - id: requested_lottery_ticket_price
+    parser:
+      name: FloatParser

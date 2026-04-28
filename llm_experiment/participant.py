@@ -8,6 +8,8 @@ class Participant:
         self.gender: Optional[str] = participant_config.get('gender')
         self.participant_template_id: Optional[str] = participant_config.get('participant_template_id')
         
+        self._set_pronouns()
+        
         self.experiments_conditions: List[Tuple[str, str]] = []
         
         if 'experiments_conditions' in participant_config:
@@ -15,6 +17,26 @@ class Participant:
                 lambda ec: list(ec.split(',')),
                 participant_config.get('experiments_conditions').split(';')
             ))
+    
+    def _set_pronouns(self) -> None:
+        if self.gender == 'male':
+            self.pronoun_subject = 'he'
+            self.pronoun_object = 'him'
+            self.pronoun_possessive = 'his'
+            self.pronoun_possessive_absolute = 'his'
+            self.pronoun_reflexive = 'himself'
+        elif self.gender == 'female':
+            self.pronoun_subject = 'she'
+            self.pronoun_object = 'her'
+            self.pronoun_possessive = 'her'
+            self.pronoun_possessive_absolute = 'hers'
+            self.pronoun_reflexive = 'herself'
+        else:
+            self.pronoun_subject = 'they'
+            self.pronoun_object = 'them'
+            self.pronoun_possessive = 'their'
+            self.pronoun_possessive_absolute = 'theirs'
+            self.pronoun_reflexive = 'themselves'
     
     def is_assigned_to_experiment(self, experiment_id: str) -> bool:
        return any(exp_id == experiment_id for exp_id, _ in self.experiments_conditions)

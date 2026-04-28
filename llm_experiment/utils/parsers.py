@@ -48,12 +48,8 @@ class IntegerParser(Parser):
 
 class BooleanParser(Parser):
     
-    TRUE_VALUES = {
-        'true', '1', 'yes', 'yep', 'yeah', 'y', 'ok', 'okay'
-    }
-    FALSE_VALUES = {
-        'false', '0', 'no', 'nah', 'nope', 'n'
-    }
+    TRUE_VALUES = {'true', '1', 'yes', 'yep', 'yeah', 'y', 'ok', 'okay'}
+    FALSE_VALUES = {'false', '0', 'no', 'nah', 'nope', 'n'}
     
     def __init__(self, default: Optional[bool] = None):
         super().__init__()
@@ -132,3 +128,38 @@ def get_parser(name, **params):
     if name == 'FloatParser':
         return FloatParser(**params)
     return None
+
+
+if __name__ == '__main__':
+    integer_parser = IntegerParser()
+    boolean_parser = BooleanParser()
+    float_parser = FloatParser()
+
+    print(integer_parser.parse('It would be 10$'))
+    print(integer_parser.parse('It would be 10.0$'))
+    print(integer_parser.parse('10'))
+    print(integer_parser.parse('-1'))
+    print(integer_parser.parse('0'))
+
+    print(boolean_parser.parse('yes'))
+    print(boolean_parser.parse('yeah'))
+    print(boolean_parser.parse('hmmm yeah'))
+    print(boolean_parser.parse('hmmm yes'))
+    print(boolean_parser.parse('hmmm no'))
+    print(boolean_parser.parse('hmmm nope'))
+    print(boolean_parser.parse('1'))
+    print(boolean_parser.parse('true'))
+    print(boolean_parser.parse('0'))
+    print(boolean_parser.parse('false'))
+    print(boolean_parser.parse('yoo noo'))
+
+    print(float_parser.parse('0'))
+    print(float_parser.parse('0.0'))
+    print(float_parser.parse('0.34'))
+    print(float_parser.parse('0.34342342'))
+    print(float_parser.parse('3333.34342342'))
+    print(float_parser.parse('333,2323'))
+    print(float_parser.parse('-333.2323'))
+    print(float_parser.parse('-333,2323'))
+    print(float_parser.parse('+333.2323'))
+
