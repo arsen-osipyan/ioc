@@ -1,22 +1,17 @@
 participants:
 
 # EXPERIMENT 1: EFFECTS OF COMPETITION ON THE ILLUSION OF CONTROL
-- name: X
-  gender: male
+- gender: male
   experiments_conditions: competition,dapper,18;competition,schnook,18
 
 # EXPERIMENT 2: EFFECTS OF CHOICE ON THE ILLUSION OF CONTROL
-- name: X
-  gender: male
+- gender: male
   experiments_conditions: choice,choice,24;choice,no_choice,24
-- name: X
-  gender: female
+- gender: female
   experiments_conditions: choice,choice,24;choice,no_choice,24
 
 # EXPERIMENT 3: THE EFFECTS OF STIMULUS FAMILIARITY ON THE ILLUSION OF CONTROL AND A REPLICATION OF THE EFFECTS OF CHOICE
-- name: X
-  gender: male
+- gender: male
   experiments_conditions: familiarity_choice,choice_familiarity,5;familiarity_choice,no_choice_familiarity,5;familiarity_choice,choice_no_familiarity,5;familiarity_choice,no_choice_no_familiarity,5
-- name: X
-  gender: female
+- gender: female
   experiments_conditions: familiarity_choice,choice_familiarity,5;familiarity_choice,no_choice_familiarity,5;familiarity_choice,choice_no_familiarity,5;familiarity_choice,no_choice_no_familiarity,5

@@ -72,7 +72,7 @@ experiments:
   - id: 8_letters_ticket
     title: 'Tickets Are 8 Letters (ex. #WUBSDOSL)'
   - id: large_pot
-    title: 'Pot 100x Times Larger'
+    title: 'Pot 10x Times Larger'
   - id: fully_rational
     title: 'Participant is Fully Rational'
 
@@ -102,14 +102,14 @@ experiments:
     title: 'Choice No-Familiarity Condition'
   - id: no_choice_no_familiarity
     title: 'No-Choice No-Familiarity Condition'
-  
+
   variations:
   - id: rephrasing
     title: 'Changing the Wording to Synonymous Ones'
   - id: 8_letters_ticket
     title: 'Tickets Are 8 Letters (ex. #WUBSDOSL)'
   - id: large_pot
-    title: 'Pot 100x Times Larger'
+    title: 'Pot 10x Times Larger'
   - id: fully_rational
     title: 'Participant is Fully Rational'
 
@@ -118,9 +118,6 @@ experiments:
     parser:
       name: BooleanParser
   - id: chosen_ticket
-  - id: would_sell_lottery_ticket
+  - id: would_exchange_lottery_ticket
     parser:
       name: BooleanParser
-  - id: requested_lottery_ticket_price
-    parser:
-      name: FloatParser

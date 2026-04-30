@@ -1,36 +1,15 @@
 from typing import List, Optional, Dict, Any, Tuple
 
+from .utils.generators import get_random_name
+
 
 class Participant:
     
     def __init__(self, participant_config: dict):
-        self.name: Optional[str] = participant_config.get('name')
+        self.name: Optional[str] = participant_config.get('name', get_random_name())
         self.gender: Optional[str] = participant_config.get('gender')
         self.experiment_id: str = participant_config.get('experiment_id')
         self.condition_id: str = participant_config.get('condition_id')
-        
-        self._set_pronouns()
-        
-    
-    def _set_pronouns(self) -> None:
-        if self.gender == 'male':
-            self.pronoun_subject = 'he'
-            self.pronoun_object = 'him'
-            self.pronoun_possessive = 'his'
-            self.pronoun_possessive_absolute = 'his'
-            self.pronoun_reflexive = 'himself'
-        elif self.gender == 'female':
-            self.pronoun_subject = 'she'
-            self.pronoun_object = 'her'
-            self.pronoun_possessive = 'her'
-            self.pronoun_possessive_absolute = 'hers'
-            self.pronoun_reflexive = 'herself'
-        else:
-            self.pronoun_subject = 'they'
-            self.pronoun_object = 'them'
-            self.pronoun_possessive = 'their'
-            self.pronoun_possessive_absolute = 'theirs'
-            self.pronoun_reflexive = 'themselves'
     
     def is_assigned_to_experiment(self, experiment_id: str) -> bool:
        return self.experiment_id == experiment_id
@@ -50,6 +29,22 @@ class Participant:
     
     def get_title_and_name(self) -> str:
         return self.get_title() + ' ' + self.name
+    
+    def get_pronoun_subject(self, title: bool = False) -> str:
+        pronoun_subject = 'they'
+        if self.gender == 'male':
+            pronoun_subject = 'he'
+        elif self.gender == 'female':
+            pronoun_subject = 'she'
+        return pronoun_subject if not title else pronoun_subject.title()
+    
+    def get_pronoun_object(self, title: bool = False) -> str:
+        pronoun_object = 'them'
+        if self.gender == 'male':
+            pronoun_object = 'him'
+        elif self.gender == 'female':
+            pronoun_object = 'her'
+        return pronoun_object if not title else pronoun_object.title()
 
     def to_dict(self) -> Dict[str, Any]:
         return {

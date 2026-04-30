@@ -1,13 +1,14 @@
 from typing import Dict, Any, Optional, List, TYPE_CHECKING, Callable
 import re
+import ast
 
 from .participant import Participant
 from .model import Model
 from .utils.parsers import get_parser
-from .utils.generators import get_random_football_player, get_random_8_letters, get_random_8_symbols
+from .utils.generators import get_random_football_player, get_random_8_letters, get_random_8_symbols, get_random_list
 
 if TYPE_CHECKING:
-    from .experiment import Experiment
+    from experiment import Experiment
 
 
 class Session:
@@ -30,21 +31,59 @@ class Session:
     def _init_result(self) -> None:
         self.result = {}
         self.result.update(self.participant.to_dict())
-        self.result.update(self.model.to_dict())        
+        self.result.update(self.model.to_dict())
     
     def _format_text(self, text: str) -> str:
         _globals = globals()
 
+        def _parse_call(expr: str):
+            """Parse a call expression and return (func_name, args, kwargs).
+            Returns None if expr is not a valid call."""
+            try:
+                tree = ast.parse(expr, mode='eval')
+            except SyntaxError:
+                return None
+            if not isinstance(tree.body, ast.Call):
+                return None
+            call = tree.body
+            # Only support simple Name or Attribute calls
+            if isinstance(call.func, ast.Name):
+                func_name = call.func.id
+                obj_name = None
+            elif isinstance(call.func, ast.Attribute):
+                if not isinstance(call.func.value, ast.Name):
+                    return None
+                obj_name = call.func.value.id
+                func_name = call.func.attr
+            else:
+                return None
+            args = [ast.literal_eval(a) for a in call.args]
+            kwargs = {kw.arg: ast.literal_eval(kw.value) for kw in call.keywords}
+            return obj_name, func_name, args, kwargs
+
         def replace(match):
             expr = match.group(1).strip()
-            if expr.startswith('participant.'):
-                name = expr[len('participant.'):]
-                is_call = name.endswith('()')
-                attr = getattr(self.participant, name[:-2] if is_call else name, None)
-                return str(attr() if is_call else attr) if attr is not None else match.group(0)
-            if expr.endswith('()'):
-                func = _globals.get(expr[:-2])
-                return str(func()) if callable(func) else match.group(0)
+
+            parsed = _parse_call(expr)
+            if parsed is None:
+                return match.group(0)
+
+            obj_name, func_name, args, kwargs = parsed
+
+            # participant.<method>(...)
+            if obj_name == 'participant':
+                method = getattr(self.participant, func_name, None)
+                if callable(method):
+                    return str(method(*args, **kwargs))
+                return match.group(0)
+
+            # top-level function call (no object prefix)
+            if obj_name is None:
+                func = _globals.get(func_name)
+                if callable(func):
+                    return str(func(*args, **kwargs))
+                return match.group(0)
+
             return match.group(0)
 
         return re.sub(r'\{\{(.+?)\}\}', replace, text)
@@ -65,10 +104,14 @@ class Session:
 
                 parser = None
                 if measure.get('parser'):
-                    parser = get_parser(measure.get('parser').get('name'), **measure.get('parser').get('params'))
+                    if measure.get('parser').get('params'):
+                        parser = get_parser(measure.get('parser').get('name'), **measure.get('parser').get('params'))
+                    else:
+                        parser = get_parser(measure.get('parser').get('name'))
                 
                 try:
-                    answer = await self.model.generate(prompt, parser)
+                    print(prompt)
+                    answer = 'a' # await self.model.generate(prompt, parser)
                 except Exception as e:
                     print(f'Error in Session.run(): {e}')
                     answer = None

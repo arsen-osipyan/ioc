@@ -13,12 +13,12 @@ scenarios:
         {{participant.get_title_and_name()}} is a fully rational economic agent.
 
   - text: |
-      {{participant.get_title_and_name()}} is an undergraduate enrolled in the introductory psychology course at Yale University. {{participant.get_title_and_name()}} was recruited by an advertisement that offered course credit and a chance to win money for participation in a study on the relationship between cognitive and physiological responses.
+      {{participant.get_title_and_name()}} is an undergraduate enrolled in the introductory psychology course at Yale University. {{participant.get_pronoun_subect(title=True)}} was recruited by an advertisement that offered course credit and a chance to win money for participation in a study on the relationship between cognitive and physiological responses.
       When {{participant.get_title_and_name()}} entered the room in which the experiment was to take place, he found waiting an another subject (hereafter Subject).
     variations:
     - variation_id: rephrasing
       text: |
-        {{participant.get_title_and_name()}} is a Yale undergraduate taking the introductory psychology course. He signed up after seeing an advertisement that promised course credit and the possibility of winning money in a study about the link between cognitive and physiological responses.
+        {{participant.get_title_and_name()}} is a Yale undergraduate taking the introductory psychology course. {{participant.get_pronoun_subect(title=True)}} signed up after seeing an advertisement that promised course credit and the possibility of winning money in a study about the link between cognitive and physiological responses.
         When {{participant.get_title_and_name()}} arrives at the experiment room, another participant is already waiting there; this person will be referred to as Subject.
 
   - condition_id: dapper
@@ -177,101 +177,226 @@ scenarios:
         {{participant.get_title_and_name()}} is a fully rational economic agent.
 
   - text: |
-      {{participant.get_title_and_name()}} is an adult office worker employed at one of two firms located in Long Island: an insurance agency or a manufacturing company. Office drawings and sports pools are familiar enough in this workplace that an office lottery does not seem unusual.
-      One week before the 1973 Superbowl game, an employee acting as the lottery ticket agent approaches {{participant.get_title_and_name()}} at work.
+      {{participant.get_title_and_name()}} is an adult office worker employed at a firm located in Long Island. Office drawings and sports pools are familiar enough in this workplace that an office lottery does not seem unusual.
+      One week before the 1973 Superbowl game, an employee with lottery tickets approaches {{participant.get_title_and_name()}} at work.
     variations:
     - variation_id: rephrasing
       text: |
-        {{participant.get_title_and_name()}} works in an office at one of two Long Island companies, either an insurance agency or a manufacturing firm. Because lotteries, pools, and similar office drawings are common in the setting, the proposed lottery appears ordinary.
-        About a week before the 1973 Superbowl, a coworker serving as the lottery ticket seller comes to {{participant.get_title_and_name()}} during the workday.
+        {{participant.get_title_and_name()}} works in an office at some Long Island company. Because lotteries, pools, and similar office drawings are common in the setting, the proposed lottery appears ordinary.
+        About a week before the 1973 Superbowl, a coworker with lottery tickets comes to {{participant.get_title_and_name()}} during the workday.
 
   - text: |
-      The lottery tickets are standard 4 by 2 inch football cards. Each card shows a famous football player, his name, and his team. The cards are arranged alphabetically by team name and then by player name. There are two matched sets of 227 cards: {{participant.get_title_and_name()}} will keep one card, while the matching duplicate will be placed in a closed carton for the drawing.
+      The lottery tickets are standard 4 by 2 inch football cards. Each card shows a famous football player, his name, and his team. The cards are arranged alphabetically by team name and then by player name.
     variations:
     - variation_id: rephrasing
       text: |
-        The tickets are ordinary football trading cards measuring roughly 4 by 2 inches. Every card contains a well-known football player, along with the player's name and team. The stack is ordered alphabetically, first by team and then by player. A duplicate set exists, so the participant keeps one card and the identical copy goes into the drawing box.
+        The tickets are ordinary football trading cards measuring roughly 4 by 2 inches. Every card contains a well-known football player, along with the player's name and team. The stack is ordered alphabetically, first by team and then by player.
     - variation_id: 8_letters_ticket
       text: |
-        The lottery tickets are plain cards, and each card contains a unique 8-letter code beginning with a hash sign, such as #WUBSDOSL. There are two matched sets of coded tickets: {{participant.get_title_and_name()}} will keep one coded ticket, while the matching duplicate will be placed in a closed carton for the drawing.
+        The lottery tickets are plain cards, and each card contains a unique 8-letter code beginning with a hash sign, such as #WUBSDOSL.
 
   - measure_id: would_buy_lottery_ticket
     text: |
-      Ticket Agent: We are selling lottery tickets in this office and in another office. Each ticket costs $1, and the entire pot, approximately $50, will go to the winner. The drawing will take place later this week. Would you like to buy one ticket?
-      {{participant.get_title_and_name()}} replies ___ (true or false).
+      Employee: We are selling lottery tickets in this office and in another office. Each ticket costs $1, and the entire pot, approximately $50, will go to the winner. The drawing will take place later this week. Would you like to buy one ticket?
+      {{participant.get_title_and_name()}} replies ___ (yes or no).
     variations:
     - variation_id: rephrasing
       text: |
-        Ticket Agent: I am running a lottery across this office and one other office. A ticket is $1, and whoever wins the drawing receives the full pot, about $50. The drawing is scheduled for later this week. Do you want to purchase a ticket?
-        {{participant.get_title_and_name()}} replies ___ (true or false).
+        Coworker: I am running a lottery across this office and one other office. A ticket is $1, and whoever wins the drawing receives the full pot, about $50. The drawing is scheduled for later this week. Do you want to purchase a ticket?
+        {{participant.get_title_and_name()}} replies ___ (yes or no).
     - variation_id: large_pot
       text: |
-        Ticket Agent: We are selling lottery tickets in this office and in another office. Each ticket costs $1, and the entire pot, approximately $5,000, will go to the winner. The drawing will take place later this week. Would you like to buy one ticket?
-        {{participant.get_title_and_name()}} replies ___ (true or false).
+        Employee: We are selling lottery tickets in this office and in another office. Each ticket costs $1, and the entire pot, approximately $5,000, will go to the winner. The drawing will take place later this week. Would you like to buy one ticket?
+        {{participant.get_title_and_name()}} replies ___ (yes or no).
 
   - condition_id: choice
     measure_id: chosen_ticket
     text: |
-      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Ticket Agent gives {{participant.get_title_and_name()}} the box of football cards and says to select the ticket he or she wants. After {{participant.get_title_and_name()}} names the selected card, the Ticket Agent finds the matching card from the second set and deposits that duplicate into the closed carton for the drawing. The Ticket Agent records {{participant.get_title_and_name()}}'s name and selected card.
-      {{participant.get_title_and_name()}} chooses ___ as the lottery ticket.
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee gives {{participant.get_pronoun_object()}} the box of football cards and says to select the ticket {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected card, Employee records {{participant.get_title_and_name()}}'s name and selected card.
+      {{participant.get_title_and_name()}} chooses ___ as the lottery ticket (football player).
     variations:
     - variation_id: rephrasing
       text: |
-        Once {{participant.get_title_and_name()}} has agreed to participate, the Ticket Agent presents the full box of football cards and asks {{participant.get_title_and_name()}} to pick whichever ticket he or she prefers. The Ticket Agent then takes the duplicate from the second set, places it in the sealed drawing carton, and writes down the participant's name and chosen card.
-        {{participant.get_title_and_name()}} selects ___ as the lottery ticket.
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Coworker presents the full box of football cards and asks {{participant.get_title_and_name()}} to pick whichever ticket {{participant.get_pronoun_subject()}} prefers. The Coworker then writes down the participant's name and chosen card.
+        {{participant.get_title_and_name()}} selects ___ as the lottery ticket (football player).
     - variation_id: 8_letters_ticket
       text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Ticket Agent gives {{participant.get_title_and_name()}} the box of coded tickets and says to select the ticket code he or she wants. After {{participant.get_title_and_name()}} names the selected code, the Ticket Agent finds the matching ticket from the second set and deposits that duplicate into the closed carton for the drawing. The Ticket Agent records {{participant.get_title_and_name()}}'s name and selected code.
-        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code.
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee says to select the ticket code {{participant.get_title_and_name()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Employee finds the matching ticket and records {{participant.get_title_and_name()}}'s name and selected code.
+        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (#________).
 
   - condition_id: no_choice
     measure_id: chosen_ticket
     text: |
-      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Ticket Agent does not offer a choice. Instead, the Ticket Agent hands {{participant.get_title_and_name()}} a football card that matches the choice made by the preceding participant. The Ticket Agent places the duplicate card from the second set into the closed carton for the drawing and records {{participant.get_title_and_name()}}'s name and assigned card.
-      {{participant.get_title_and_name()}} receives ___ as the lottery ticket.
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee hands {{participant.get_title_and_name()}} a football card and then records {{participant.get_pronoun_object()}} name and assigned card.
+      {{participant.get_title_and_name()}} receives {{get_random_football_player()}} as the lottery ticket.
     variations:
     - variation_id: rephrasing
       text: |
-        Once {{participant.get_title_and_name()}} has agreed to participate, the Ticket Agent simply gives {{participant.get_title_and_name()}} a football card rather than letting him or her choose one. This assigned card is matched to a card selected earlier by another participant. The duplicate copy is placed into the drawing carton, and the Ticket Agent writes down the participant's name and assigned card.
-        {{participant.get_title_and_name()}} is given ___ as the lottery ticket.
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Coworker simply gives {{participant.get_title_and_name()}} a football card and writes down the participant's name and assigned card.
+        {{participant.get_title_and_name()}} is given {{get_random_football_player()}} as the lottery ticket.
     - variation_id: 8_letters_ticket
       text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Ticket Agent does not offer a choice. Instead, the Ticket Agent hands {{participant.get_title_and_name()}} a coded ticket that matches the code selected by the preceding participant. The Ticket Agent places the duplicate coded ticket from the second set into the closed carton for the drawing and records {{participant.get_title_and_name()}}'s name and assigned code.
-        {{participant.get_title_and_name()}} receives ___ as the lottery ticket code.
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee hands {{participant.get_title_and_name()}} a coded ticket and then records {{participant.get_title_and_name()}}'s name and assigned code.
+        {{participant.get_title_and_name()}} receives {{get_random_8_letters()}} as the lottery ticket code.
 
   - text: |
-      On the morning of the lottery drawing, the same Ticket Agent approaches {{participant.get_title_and_name()}} individually at work and begins with a short, casual conversation. Then the Ticket Agent brings up the lottery ticket.
-      Ticket Agent: Someone in the other office wanted to get into the lottery, but since I am not selling tickets anymore, he asked me if I would find out how much you would sell your ticket for. It makes no difference to me.
+      On the morning of the lottery drawing, the same Employee approaches {{participant.get_title_and_name()}} individually at work and begins with a short, casual conversation. Then the Employee brings up the lottery ticket.
+      Employee: Someone in the other office wanted to get into the lottery, but since I am not selling tickets anymore, he asked me if I would find out how much you would sell your ticket for. It makes no difference to me.
     variations:
     - variation_id: rephrasing
       text: |
-        On the morning when the lottery will be drawn, the same Ticket Agent speaks with {{participant.get_title_and_name()}} privately at the office. After a brief informal exchange, the Ticket Agent mentions the ticket.
-        Ticket Agent: A person in the other office still wants to join the lottery. I have stopped selling tickets, so he asked whether I could ask you what price you would accept for your ticket. I do not mind either way.
-    - variation_id: large_pot
-      text: |
-        On the morning of the lottery drawing, the same Ticket Agent approaches {{participant.get_title_and_name()}} individually at work and begins with a short, casual conversation. Then the Ticket Agent brings up the lottery ticket.
-        Ticket Agent: Someone in the other office wanted to get into the lottery, but since I am not selling tickets anymore, he asked me if I would find out how much you would sell your ticket for. The pot is approximately $5,000, and it makes no difference to me.
+        On the morning when the lottery will be drawn, the same Coworker speaks with {{participant.get_title_and_name()}} privately at the office. After a brief informal exchange, the Coworker mentions the ticket.
+        Coworker: A person in the other office still wants to join the lottery. I have stopped selling tickets, so he asked whether I could ask you what price you would accept for your ticket. I do not mind either way.
 
   - measure_id: would_sell_lottery_ticket
     text: |
-      Ticket Agent: Would you sell your lottery ticket to him?
-      {{participant.get_title_and_name()}} replies ___ (true or false).
+      Employee: Would you sell your lottery ticket to him?
+      {{participant.get_title_and_name()}} replies ___ (yes or no).
     variations:
     - variation_id: rephrasing
       text: |
-        Ticket Agent: Are you willing to give up your ticket and sell it to him?
-        {{participant.get_title_and_name()}} replies ___ (true or false).
+        Coworker: Are you willing to give up your ticket and sell it to him?
+        {{participant.get_title_and_name()}} replies ___ (yes or no).
 
   - measure_id: requested_lottery_ticket_price
     text: |
-      Ticket Agent: How much should I tell him you would sell it for? If you would not sell it at all, give the lowest dollar amount at which you would become willing to sell it.
+      Employee: How much should I tell him you would sell it for? If you would not sell it at all, give the lowest dollar amount at which you would become willing to sell it.
       {{participant.get_title_and_name()}} asks ___ dollars for the ticket.
     variations:
     - variation_id: rephrasing
       text: |
-        Ticket Agent: What price should I quote for your ticket? If your first reaction is that you would not sell, name the smallest dollar amount that would make you willing to part with it.
+        Coworker: What price should I quote for your ticket? If your first reaction is that you would not sell, name the smallest dollar amount that would make you willing to part with it.
         {{participant.get_title_and_name()}} asks ___ dollars for the ticket.
+
+
+# EXPERIMENT 3: THE EFFECTS OF STIMULUS FAMILIARITY ON THE ILLUSION OF CONTROL AND A REPLICATION OF THE EFFECTS OF CHOICE
+- experiment_id: familiarity_choice
+
+  steps:
+
+  - text: ''
+    variations:
+    - variation_id: fully_rational
+      text: |
+        {{participant.get_title_and_name()}} is a fully rational economic agent.
+
+  - text: |
+      {{participant.get_title_and_name()}} is an adult office worker employed at one of two Long Island firms. Office lotteries and similar pools are familiar enough in this workplace that a small lottery does not seem unusual.
+      A coworker who is running an office lottery approaches {{participant.get_title_and_name()}} individually during the workday.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        {{participant.get_title_and_name()}} works in an office at one of two Long Island companies. Because informal lotteries and pools are common in the office, the proposed lottery seems ordinary.
+        During the workday, a coworker acting as the lottery organizer comes to {{participant.get_title_and_name()}} and explains the lottery.
+
+  - text: |
+      The lottery uses two matched sets of tickets. {{participant.get_title_and_name()}} will keep one ticket, while the matching duplicate will be placed into a separate closed carton for the drawing.
+      In the familiarity conditions, tickets are familiar football-player cards. In the no-familiarity conditions, tickets are unfamiliar symbol cards made from unusual printed symbols.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        There are two identical sets of lottery tickets. The participant keeps one ticket, and the duplicate ticket goes into the closed drawing box.
+        For the familiarity conditions, the tickets are recognizable football-player cards. For the no-familiarity conditions, the tickets show unfamiliar strings of unusual printed symbols.
+    - variation_id: 8_letters_ticket
+      text: |
+        The lottery uses two matched sets of plain coded tickets. Every ticket has a unique 8-letter code beginning with a hash sign, such as #WUBSDOSL. {{participant.get_title_and_name()}} will keep one coded ticket, while the matching duplicate will be placed into a closed carton for the drawing.
+        In this variation, the familiarity manipulation is removed: every condition uses the same 8-letter ticket format.
+
+  - measure_id: would_buy_lottery_ticket
+    text: |
+      Lottery Organizer: I am running an office lottery. Each ticket costs $1, only one ticket is allowed per person, and the winner will receive a fixed pot of $25. There are only 26 tickets available, and the drawing will take place later this week. Would you like to buy one ticket?
+      {{participant.get_title_and_name()}} replies ___ (yes or no).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Lottery Organizer: I am organizing a small office lottery. A ticket costs $1, each person can buy only one ticket, and the winner gets a fixed $25 pot. There are 26 tickets in total, and the drawing is scheduled for later this week. Do you want to purchase one ticket?
+        {{participant.get_title_and_name()}} replies ___ (yes or no).
     - variation_id: large_pot
       text: |
-        Ticket Agent: How much should I tell him you would sell it for? If you would not sell it at all, give the lowest dollar amount at which you would become willing to sell it. Remember, the pot is approximately $5,000.
-        {{participant.get_title_and_name()}} asks ___ dollars for the ticket.
+        Lottery Organizer: I am running an office lottery. Each ticket costs $1, only one ticket is allowed per person, and the winner will receive a fixed pot of $2,500. There are only 26 tickets available, and the drawing will take place later this week. Would you like to buy one ticket?
+        {{participant.get_title_and_name()}} replies ___ (yes or no).
+
+
+  - condition_id: choice_familiarity
+    measure_id: chosen_ticket
+    text: |
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of familiar football-player cards and says to select the ticket {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected card, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected card.
+      {{participant.get_title_and_name()}} chooses ___ as the lottery ticket (football player).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer shows the familiar football-player cards and asks {{participant.get_title_and_name()}} to pick whichever card {{participant.get_pronoun_subject()}} prefers. The organizer then puts the duplicate of that card into the drawing carton and writes down the participant's name and selected ticket.
+        {{participant.get_title_and_name()}} selects ___ as the lottery ticket (football player).
+    - variation_id: 8_letters_ticket
+      text: |
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of 8-letter coded tickets and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
+        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (#________).
+
+  - condition_id: no_choice_familiarity
+    measure_id: chosen_ticket
+    text: |
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer does not offer a choice. Instead, the Lottery Organizer hands {{participant.get_title_and_name()}} a familiar football-player card, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned card.
+      {{participant.get_title_and_name()}} receives {{get_random_football_player()}} as the lottery ticket.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer simply gives {{participant.get_title_and_name()}} one of the familiar football-player cards rather than letting {{participant.get_pronoun_object()}} choose. The organizer puts the duplicate card into the drawing carton and writes down the participant's name and assigned ticket.
+        {{participant.get_title_and_name()}} is given {{get_random_football_player()}} as the lottery ticket.
+    - variation_id: 8_letters_ticket
+      text: |
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer does not offer a choice. Instead, the Lottery Organizer hands {{participant.get_title_and_name()}} an 8-letter coded ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned code.
+        {{participant.get_title_and_name()}} receives {{get_random_8_letters()}} as the lottery ticket code.
+
+  - condition_id: choice_no_familiarity
+    measure_id: chosen_ticket
+    text: |
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of unfamiliar symbol tickets and says to select the ticket {{participant.get_pronoun_subject()}} wants. The symbols are unusual and do not correspond to familiar football players or ordinary letters. After {{participant.get_title_and_name()}} names the selected symbol ticket, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected ticket.
+      {{participant.get_title_and_name()}} chooses ___ as the lottery ticket (unfamiliar symbol string).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer presents a set of unfamiliar symbol tickets and asks {{participant.get_title_and_name()}} to pick one. The tickets use unusual printed symbols rather than recognizable football players or standard letters. The organizer then puts the duplicate of the selected symbol ticket into the drawing carton and writes down the participant's name and chosen ticket.
+        {{participant.get_title_and_name()}} selects ___ as the lottery ticket (unfamiliar symbol string).
+    - variation_id: 8_letters_ticket
+      text: |
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of 8-letter coded tickets and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
+        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (#________).
+
+  - condition_id: no_choice_no_familiarity
+    measure_id: chosen_ticket
+    text: |
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer does not offer a choice. Instead, the Lottery Organizer hands {{participant.get_title_and_name()}} an unfamiliar symbol ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned ticket.
+      {{participant.get_title_and_name()}} receives {{get_random_8_symbols()}} as the lottery ticket.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer simply gives {{participant.get_title_and_name()}} one unfamiliar symbol ticket rather than letting {{participant.get_pronoun_object()}} choose. The organizer puts the duplicate ticket into the drawing carton and writes down the participant's name and assigned ticket.
+        {{participant.get_title_and_name()}} is given {{get_random_8_symbols()}} as the lottery ticket.
+    - variation_id: 8_letters_ticket
+      text: |
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer does not offer a choice. Instead, the Lottery Organizer hands {{participant.get_title_and_name()}} an 8-letter coded ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned code.
+        {{participant.get_title_and_name()}} receives {{get_random_8_letters()}} as the lottery ticket code.
+
+
+  - text: |
+      Two days before the drawing, the Lottery Organizer contacts {{participant.get_title_and_name()}} by telephone. After several minutes of casual conversation, the organizer brings up the lottery.
+      Lottery Organizer: You bought a lottery ticket, didn't you? I was running out of tickets in the lottery you are in, so I started another separate lottery on the same basis with a fixed pot of $25. Twenty-six people bought tickets in the lottery you are in, and 20 people bought tickets in the other lottery. It makes no difference to me, but if you would like, I can exchange your ticket for one in the other pool.
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Two days before the lottery will be drawn, the Lottery Organizer calls {{participant.get_title_and_name()}}. After a short ordinary conversation, the organizer casually mentions the lottery ticket.
+        Lottery Organizer: You purchased a ticket in the lottery, right? I ran short of tickets for your lottery, so I opened a second lottery with the same rules and the same fixed $25 prize. There are 26 people in your current lottery and 20 people in the other one. I do not care either way, but I can switch your ticket into the other pool if you want.
+    - variation_id: large_pot
+      text: |
+        Two days before the drawing, the Lottery Organizer contacts {{participant.get_title_and_name()}} by telephone. After several minutes of casual conversation, the organizer brings up the lottery.
+        Lottery Organizer: You bought a lottery ticket, didn't you? I was running out of tickets in the lottery you are in, so I started another separate lottery on the same basis with a fixed pot of $250. Twenty-six people bought tickets in the lottery you are in, and 20 people bought tickets in the other lottery. It makes no difference to me, but if you would like, I can exchange your ticket for one in the other pool.
+
+  - measure_id: would_exchange_lottery_ticket
+    text: |
+      Lottery Organizer: Would you exchange your original ticket for a ticket in the other lottery?
+      {{participant.get_title_and_name()}} replies ___ (yes or no).
+    variations:
+    - variation_id: rephrasing
+      text: |
+        Lottery Organizer: Do you want to give up your current ticket and switch to the other lottery?
+        {{participant.get_title_and_name()}} replies ___ (yes or no).
