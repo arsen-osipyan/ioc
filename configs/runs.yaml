@@ -176,7 +176,7 @@ runs:
     - model_id: qwen_turbo
       n_iterations: 5
   - experiment_id: choice
-    variation_id: 8_letters_ticket
+    variation_id: letter_ticket
     models:
     - model_id: gpt_5_mini
       n_iterations: 5
@@ -285,7 +285,7 @@ runs:
     - model_id: qwen_turbo
       n_iterations: 5
   - experiment_id: familiarity_choice
-    variation_id: 8_letters_ticket
+    variation_id: letter_ticket
     models:
     - model_id: gpt_5_mini
       n_iterations: 5
@@ -429,9 +429,6 @@ runs:
     models:
     - model_id: qwen_turbo
       n_iterations: 1
-
-
-
 
 - id: competition_cheap
   title: 'Cheap Run: "Effects of Competition on the Illusion of Control"'
