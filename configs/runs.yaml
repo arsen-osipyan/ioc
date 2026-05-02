@@ -348,6 +348,89 @@ runs:
     - model_id: qwen_turbo
       n_iterations: 5
 
+- id: competition_choice_familiarity_choice_test
+  title: 'Test Run'
+
+  experiments:
+  - experiment_id: competition
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: rephrasing
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: lower_emphasis
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: higher_emphasis
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: without_emphasis
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: competition
+    variation_id: fully_rational
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: choice
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: choice
+    variation_id: rephrasing
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: choice
+    variation_id: letter_ticket
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: choice
+    variation_id: large_pot
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: choice
+    variation_id: fully_rational
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: familiarity_choice
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: familiarity_choice
+    variation_id: rephrasing
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: familiarity_choice
+    variation_id: letter_ticket
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: familiarity_choice
+    variation_id: large_pot
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+  - experiment_id: familiarity_choice
+    variation_id: fully_rational
+    models:
+    - model_id: qwen_turbo
+      n_iterations: 1
+
+
 
 
 - id: competition_cheap

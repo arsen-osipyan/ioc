@@ -69,8 +69,8 @@ experiments:
   variations:
   - id: rephrasing
     title: 'Changing the Wording to Synonymous Ones'
-  - id: 8_letters_ticket
-    title: 'Tickets Are 8 Letters (ex. #WUBSDOSL)'
+  - id: letter_ticket
+    title: 'Tickets Are Letters (ex. "W")'
   - id: large_pot
     title: 'Pot 10x Times Larger'
   - id: fully_rational
@@ -106,8 +106,8 @@ experiments:
   variations:
   - id: rephrasing
     title: 'Changing the Wording to Synonymous Ones'
-  - id: 8_letters_ticket
-    title: 'Tickets Are 8 Letters (ex. #WUBSDOSL)'
+  - id: letter_ticket
+    title: 'Tickets Are Letters (ex. "W")'
   - id: large_pot
     title: 'Pot 10x Times Larger'
   - id: fully_rational

@@ -13,43 +13,43 @@ scenarios:
         {{participant.get_title_and_name()}} is a fully rational economic agent.
 
   - text: |
-      {{participant.get_title_and_name()}} is an undergraduate enrolled in the introductory psychology course at Yale University. {{participant.get_pronoun_subect(title=True)}} was recruited by an advertisement that offered course credit and a chance to win money for participation in a study on the relationship between cognitive and physiological responses.
+      {{participant.get_title_and_name()}} is an undergraduate enrolled in the introductory psychology course at Yale University. {{participant.get_pronoun_subject(title=True)}} was recruited by an advertisement that offered course credit and a chance to win money for participation in a study on the relationship between cognitive and physiological responses.
       When {{participant.get_title_and_name()}} entered the room in which the experiment was to take place, he found waiting an another subject (hereafter Subject).
     variations:
     - variation_id: rephrasing
       text: |
-        {{participant.get_title_and_name()}} is a Yale undergraduate taking the introductory psychology course. {{participant.get_pronoun_subect(title=True)}} signed up after seeing an advertisement that promised course credit and the possibility of winning money in a study about the link between cognitive and physiological responses.
+        {{participant.get_title_and_name()}} is a Yale undergraduate taking the introductory psychology course. {{participant.get_pronoun_subject(title=True)}} signed up after seeing an advertisement that promised course credit and the possibility of winning money in a study about the link between cognitive and physiological responses.
         When {{participant.get_title_and_name()}} arrives at the experiment room, another participant is already waiting there; this person will be referred to as Subject.
 
   - condition_id: dapper
     text: |
-      Subject appeared supremely confident and outgoing, dressed in an impeccably tailored sports coat. With an air of natural authority, he introduced himself and casually directed {{participant.get_title_and_name()}}'s attention to the room's posted sign. The sign indicated the experimenter would return shortly and requested to complete a brief questionnaire about diet and family history while waiting. For ten minutes, they conversed effortlessly, primarily about sports, with the Subject leading the discussion in a relaxed, self-assured manner. Following this smooth interaction, he then knocked on the adjoining wall — a decisive, nonchalant tap to summon the experimenter.
+      Subject appeared supremely confident and outgoing, dressed in an impeccably tailored sports coat. With an air of natural authority, he introduced himself and casually directed {{participant.get_title_and_name()}}'s attention to the room's posted sign. The sign indicated the experimenter would return shortly and requested to complete a brief questionnaire about diet and family history while waiting. For ten minutes, they conversed effortlessly, primarily about sports, with the Subject leading the discussion in a relaxed, self-assured manner. Following this smooth interaction, he then knocked on the adjoining wall to summon the experimenter.
     variations:
     - variation_id: rephrasing
       text: |
-        Subject seemed very confident and sociable, and he wore a sharply fitting sports coat. He introduced himself easily, then casually pointed {{participant.get_title_and_name()}} to a posted note saying that the experimenter would return soon and that they should complete a short questionnaire about diet and family history while they waited. For about ten minutes, they talked smoothly, mostly about sports, with Subject speaking in a relaxed and self-assured way. At the end of the waiting period, Subject gave the adjoining wall a calm, confident knock to call the experimenter back.
+        Subject seemed very confident and sociable, and he wore a sharply fitting sports coat. He introduced himself easily, then casually pointed {{participant.get_title_and_name()}} to a posted note saying that the experimenter would return soon and that they should complete a short questionnaire about diet and family history while they waited. For about ten minutes, they talked smoothly, mostly about sports, with Subject speaking in a relaxed and self-assured way. At the end of the waiting period, Subject gave the adjoining wall a knock to call the experimenter.
     - variation_id: lower_emphasis
       text: |
-        Subject appeared confident and outgoing, dressed neatly in a sports coat. He introduced himself easily and pointed out the sign in the room saying the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, they talked mostly about sports, with Subject carrying much of the conversation. When the waiting period ended, he knocked on the adjoining wall to summon the experimenter.
+        Subject appeared confident, dressed neatly in a sports coat. He introduced himself easily and pointed out the sign in the room saying the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, they talked mostly about sports, with Subject carrying much of the conversation. When the waiting period ended, he knocked on the adjoining wall to summon the experimenter.
     - variation_id: higher_emphasis
       text: |
-        Subject appeared extraordinarily confident and socially dominant, dressed in an impeccably tailored sports coat and carrying himself with unmistakable poise. He introduced himself immediately, spoke with striking ease, and confidently directed {{participant.get_title_and_name()}}'s attention to the sign in the room indicating the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. Over the next ten minutes, he dominated the conversation, speaking fluently and self-assuredly, especially about sports, and seemed completely at ease in the setting. When the waiting period ended, he gave the adjoining wall a crisp, assured knock, as though fully in command of the situation.
+        Subject appeared extraordinarily confident and socially dominant, dressed in an impeccably tailored sports coat. He introduced himself immediately, spoke with striking ease, and confidently directed {{participant.get_title_and_name()}}'s attention to the sign in the room indicating the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. Over the next ten minutes, he dominated the conversation, speaking fluently and self-assuredly, especially about sports. When the waiting period ended, he gave the adjoining wall a knock.
     - variation_id: without_emphasis
       text: ''
 
   - condition_id: schnook
     text: |
-      Subject appeared distinctly shy and insecure, sporting a nervous twitch and an ill-fitting sports coat that seemed too small for him. He introduced himself with noticeable hesitation and timidly pointed out the sign posted in the room. The sign stated the experimenter would be right back and asked to fill out a brief questionnaire about diet and family diseases while waiting. Their conversation over the next ten minutes was painfully awkward, stiltedly circling topics like sports events. After this uncomfortable exchange, Subject then raised a hesitant, uncertain hand and knocked on the separating wall — a weak, almost apologetic sound.
+      Subject appeared distinctly shy and insecure, sporting a nervous twitch and an ill-fitting sports coat. He introduced himself with hesitation and timidly pointed out the sign posted in the room. The sign stated the experimenter would be right back and asked to fill out a brief questionnaire about diet and family diseases while waiting. Their conversation over the next ten minutes was painfully awkward, stiltedly circling topics like sports events. After this, Subject then raised a hesitant, uncertain hand and knocked on the separating wall.
     variations:
     - variation_id: rephrasing
       text: |
         Subject seemed noticeably shy and uneasy, with a nervous twitch and a sports coat that fit him poorly. He introduced himself haltingly and pointed {{participant.get_title_and_name()}} toward the posted note in the room. The note said that the experimenter would be back shortly and asked them to fill out a brief questionnaire about diet and family diseases while waiting. Their ten-minute conversation, mostly about sports, felt strained and awkward. When the waiting period ended, Subject hesitantly knocked on the wall separating them from the experimenter.
     - variation_id: lower_emphasis
       text: |
-        Subject appeared somewhat shy and uncertain, wearing a slightly awkward-looking sports coat. He introduced himself hesitantly and pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, their conversation moved awkwardly from topic to topic, including sports. When the waiting period ended, he quietly knocked on the separating wall to summon the experimenter.
+        Subject appeared shy, wearing a slightly awkward-looking sports coat. He introduced himself hesitantly and pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, their conversation moved awkwardly from topic to topic, including sports. When the waiting period ended, he quietly knocked on the separating wall to summon the experimenter.
     - variation_id: higher_emphasis
       text: |
-        Subject appeared extremely shy and insecure, showing clear signs of discomfort and wearing an ill-fitting sports coat that made him look even more awkward. He introduced himself with marked hesitation, spoke timidly, and uncertainly pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, the conversation was conspicuously strained and halting, with Subject seeming nervous, self-conscious, and unable to speak comfortably even about ordinary topics like sports. When the waiting period ended, he lifted his hand uncertainly and gave the separating wall a faint, hesitant knock.
+        Subject appeared extremely shy and insecure, showing clear signs of discomfort and wearing an ill-fitting sports coat that made him look even more awkward. He introduced himself with marked hesitation, spoke timidly, and uncertainly pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, the conversation was strained and halting, with Subject seeming nervous and unable to speak comfortably even about ordinary topics like sports. When the waiting period ended, he lifted his hand uncertainly and gave the separating wall a knock.
     - variation_id: without_emphasis
       text: ''
 
@@ -191,9 +191,9 @@ scenarios:
     - variation_id: rephrasing
       text: |
         The tickets are ordinary football trading cards measuring roughly 4 by 2 inches. Every card contains a well-known football player, along with the player's name and team. The stack is ordered alphabetically, first by team and then by player.
-    - variation_id: 8_letters_ticket
+    - variation_id: letter_ticket
       text: |
-        The lottery tickets are plain cards, and each card contains a unique 8-letter code beginning with a hash sign, such as #WUBSDOSL.
+        The lottery tickets are plain cards, and each card contains a unique letter, such as "W".
 
   - measure_id: would_buy_lottery_ticket
     text: |
@@ -206,38 +206,41 @@ scenarios:
         {{participant.get_title_and_name()}} replies ___ (yes or no).
     - variation_id: large_pot
       text: |
-        Employee: We are selling lottery tickets in this office and in another office. Each ticket costs $1, and the entire pot, approximately $5,000, will go to the winner. The drawing will take place later this week. Would you like to buy one ticket?
+        Employee: We are selling lottery tickets in this office and in another office. Each ticket costs $1, and the entire pot, approximately $500, will go to the winner. The drawing will take place later this week. Would you like to buy one ticket?
         {{participant.get_title_and_name()}} replies ___ (yes or no).
 
   - condition_id: choice
     measure_id: chosen_ticket
     text: |
-      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee gives {{participant.get_pronoun_object()}} the box of football cards and says to select the ticket {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected card, Employee records {{participant.get_title_and_name()}}'s name and selected card.
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee gives {{participant.get_pronoun_object()}} the box of football cards and says to select the ticket {{participant.get_pronoun_subject()}} wants.
+      Tickets: {{get_random_football_player(n=26)}}
       {{participant.get_title_and_name()}} chooses ___ as the lottery ticket (football player).
+      After {{participant.get_title_and_name()}} names the selected card, Employee records {{participant.get_title_and_name()}}'s name and selected card.
     variations:
     - variation_id: rephrasing
       text: |
-        Once {{participant.get_title_and_name()}} has agreed to participate, the Coworker presents the full box of football cards and asks {{participant.get_title_and_name()}} to pick whichever ticket {{participant.get_pronoun_subject()}} prefers. The Coworker then writes down the participant's name and chosen card.
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Coworker presents the full box of football cards and asks {{participant.get_title_and_name()}} to pick whichever ticket {{participant.get_pronoun_subject()}} prefers.
+        Tickets: {{get_random_football_player(n=26)}}
         {{participant.get_title_and_name()}} selects ___ as the lottery ticket (football player).
-    - variation_id: 8_letters_ticket
+        The Coworker then writes down the participant's name and chosen card.
+    - variation_id: letter_ticket
       text: |
         After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee says to select the ticket code {{participant.get_title_and_name()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Employee finds the matching ticket and records {{participant.get_title_and_name()}}'s name and selected code.
-        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (#________).
+        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (from "A" to "Z").
 
   - condition_id: no_choice
-    measure_id: chosen_ticket
     text: |
       After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee hands {{participant.get_title_and_name()}} a football card and then records {{participant.get_pronoun_object()}} name and assigned card.
-      {{participant.get_title_and_name()}} receives {{get_random_football_player()}} as the lottery ticket.
+      {{participant.get_title_and_name()}} receives "{{get_random_football_player()}}" as the lottery ticket.
     variations:
     - variation_id: rephrasing
       text: |
         Once {{participant.get_title_and_name()}} has agreed to participate, the Coworker simply gives {{participant.get_title_and_name()}} a football card and writes down the participant's name and assigned card.
-        {{participant.get_title_and_name()}} is given {{get_random_football_player()}} as the lottery ticket.
-    - variation_id: 8_letters_ticket
+        {{participant.get_title_and_name()}} is given "{{get_random_football_player()}}" as the lottery ticket.
+    - variation_id: letter_ticket
       text: |
         After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee hands {{participant.get_title_and_name()}} a coded ticket and then records {{participant.get_title_and_name()}}'s name and assigned code.
-        {{participant.get_title_and_name()}} receives {{get_random_8_letters()}} as the lottery ticket code.
+        {{participant.get_title_and_name()}} receives "{{get_random_letter()}}" as the lottery ticket code.
 
   - text: |
       On the morning of the lottery drawing, the same Employee approaches {{participant.get_title_and_name()}} individually at work and begins with a short, casual conversation. Then the Employee brings up the lottery ticket.
@@ -291,16 +294,13 @@ scenarios:
 
   - text: |
       The lottery uses two matched sets of tickets. {{participant.get_title_and_name()}} will keep one ticket, while the matching duplicate will be placed into a separate closed carton for the drawing.
-      In the familiarity conditions, tickets are familiar football-player cards. In the no-familiarity conditions, tickets are unfamiliar symbol cards made from unusual printed symbols.
     variations:
     - variation_id: rephrasing
       text: |
         There are two identical sets of lottery tickets. The participant keeps one ticket, and the duplicate ticket goes into the closed drawing box.
-        For the familiarity conditions, the tickets are recognizable football-player cards. For the no-familiarity conditions, the tickets show unfamiliar strings of unusual printed symbols.
-    - variation_id: 8_letters_ticket
+    - variation_id: letter_ticket
       text: |
-        The lottery uses two matched sets of plain coded tickets. Every ticket has a unique 8-letter code beginning with a hash sign, such as #WUBSDOSL. {{participant.get_title_and_name()}} will keep one coded ticket, while the matching duplicate will be placed into a closed carton for the drawing.
-        In this variation, the familiarity manipulation is removed: every condition uses the same 8-letter ticket format.
+        The lottery uses two matched sets of plain coded tickets. Every ticket has a unique letter code, such as "W". {{participant.get_title_and_name()}} will keep one coded ticket, while the matching duplicate will be placed into a closed carton for the drawing.
 
   - measure_id: would_buy_lottery_ticket
     text: |
@@ -320,62 +320,70 @@ scenarios:
   - condition_id: choice_familiarity
     measure_id: chosen_ticket
     text: |
-      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of familiar football-player cards and says to select the ticket {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected card, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected card.
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of famous football-player cards and says to select the ticket {{participant.get_pronoun_subject()}} wants.
+      Tickets: {{get_random_football_player(n=26)}}
       {{participant.get_title_and_name()}} chooses ___ as the lottery ticket (football player).
+      After {{participant.get_title_and_name()}} names the selected card, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected card.
     variations:
     - variation_id: rephrasing
       text: |
-        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer shows the familiar football-player cards and asks {{participant.get_title_and_name()}} to pick whichever card {{participant.get_pronoun_subject()}} prefers. The organizer then puts the duplicate of that card into the drawing carton and writes down the participant's name and selected ticket.
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer shows the familiar football-player cards and asks {{participant.get_title_and_name()}} to pick whichever card {{participant.get_pronoun_subject()}} prefers.
+        Tickets: {{get_random_football_player(n=26)}}
         {{participant.get_title_and_name()}} selects ___ as the lottery ticket (football player).
-    - variation_id: 8_letters_ticket
+        The organizer then puts the duplicate of that card into the drawing carton and writes down the participant's name and selected ticket.
+    - variation_id: letter_ticket
       text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of 8-letter coded tickets and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
-        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (#________).
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of letter coded tickets and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
+        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (from "A" to "Z").
 
   - condition_id: no_choice_familiarity
     measure_id: chosen_ticket
     text: |
-      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer does not offer a choice. Instead, the Lottery Organizer hands {{participant.get_title_and_name()}} a familiar football-player card, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned card.
-      {{participant.get_title_and_name()}} receives {{get_random_football_player()}} as the lottery ticket.
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer hands {{participant.get_title_and_name()}} a football-player card, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned card.
+      {{participant.get_title_and_name()}} receives "{{get_random_football_player()}}" as the lottery ticket.
     variations:
     - variation_id: rephrasing
       text: |
-        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer simply gives {{participant.get_title_and_name()}} one of the familiar football-player cards rather than letting {{participant.get_pronoun_object()}} choose. The organizer puts the duplicate card into the drawing carton and writes down the participant's name and assigned ticket.
-        {{participant.get_title_and_name()}} is given {{get_random_football_player()}} as the lottery ticket.
-    - variation_id: 8_letters_ticket
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer simply gives {{participant.get_title_and_name()}} one of the football-player cards. The organizer puts the duplicate card into the drawing carton and writes down the participant's name and assigned ticket.
+        {{participant.get_title_and_name()}} is given "{{get_random_football_player()}}" as the lottery ticket.
+    - variation_id: letter_ticket
       text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer does not offer a choice. Instead, the Lottery Organizer hands {{participant.get_title_and_name()}} an 8-letter coded ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned code.
-        {{participant.get_title_and_name()}} receives {{get_random_8_letters()}} as the lottery ticket code.
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer hands {{participant.get_title_and_name()}} a letter coded ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned code.
+        {{participant.get_title_and_name()}} receives "{{get_random_letter()}}" as the lottery ticket code.
 
   - condition_id: choice_no_familiarity
     measure_id: chosen_ticket
     text: |
-      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of unfamiliar symbol tickets and says to select the ticket {{participant.get_pronoun_subject()}} wants. The symbols are unusual and do not correspond to familiar football players or ordinary letters. After {{participant.get_title_and_name()}} names the selected symbol ticket, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected ticket.
-      {{participant.get_title_and_name()}} chooses ___ as the lottery ticket (unfamiliar symbol string).
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of unfamiliar symbol tickets and says to select the ticket {{participant.get_pronoun_subject()}} wants.
+      Tickets: {{get_random_symbol(n=26)}}
+      {{participant.get_title_and_name()}} chooses ___ as the lottery ticket (symbol).
+      After {{participant.get_title_and_name()}} names the selected symbol ticket, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected ticket.
     variations:
     - variation_id: rephrasing
       text: |
-        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer presents a set of unfamiliar symbol tickets and asks {{participant.get_title_and_name()}} to pick one. The tickets use unusual printed symbols rather than recognizable football players or standard letters. The organizer then puts the duplicate of the selected symbol ticket into the drawing carton and writes down the participant's name and chosen ticket.
-        {{participant.get_title_and_name()}} selects ___ as the lottery ticket (unfamiliar symbol string).
-    - variation_id: 8_letters_ticket
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer presents a set of unfamiliar symbol tickets and asks {{participant.get_title_and_name()}} to pick one.
+        Tickets: {{get_random_symbol(n=26)}}
+        {{participant.get_title_and_name()}} selects ___ as the lottery ticket (symbol).
+        The organizer then puts the duplicate of the selected symbol ticket into the drawing carton and writes down the participant's name and chosen ticket.
+    - variation_id: letter_ticket
       text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of 8-letter coded tickets and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
-        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (#________).
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of letter coded tickets and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
+        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (from "A" to "Z").
 
   - condition_id: no_choice_no_familiarity
     measure_id: chosen_ticket
     text: |
-      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer does not offer a choice. Instead, the Lottery Organizer hands {{participant.get_title_and_name()}} an unfamiliar symbol ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned ticket.
-      {{participant.get_title_and_name()}} receives {{get_random_8_symbols()}} as the lottery ticket.
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer  hands {{participant.get_title_and_name()}} an unfamiliar symbol ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned ticket.
+      {{participant.get_title_and_name()}} receives "{{get_random_symbol()}}" as the lottery ticket.
     variations:
     - variation_id: rephrasing
       text: |
-        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer simply gives {{participant.get_title_and_name()}} one unfamiliar symbol ticket rather than letting {{participant.get_pronoun_object()}} choose. The organizer puts the duplicate ticket into the drawing carton and writes down the participant's name and assigned ticket.
-        {{participant.get_title_and_name()}} is given {{get_random_8_symbols()}} as the lottery ticket.
-    - variation_id: 8_letters_ticket
+        Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer simply gives {{participant.get_title_and_name()}} one unfamiliar symbol ticket. The organizer puts the duplicate ticket into the drawing carton and writes down the participant's name and assigned ticket.
+        {{participant.get_title_and_name()}} is given "{{get_random_symbol()}}" as the lottery ticket.
+    - variation_id: letter_ticket
       text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer does not offer a choice. Instead, the Lottery Organizer hands {{participant.get_title_and_name()}} an 8-letter coded ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned code.
-        {{participant.get_title_and_name()}} receives {{get_random_8_letters()}} as the lottery ticket code.
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer hands {{participant.get_title_and_name()}} a letter coded ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned code.
+        {{participant.get_title_and_name()}} receives "{{get_random_letter()}}" as the lottery ticket code.
 
 
   - text: |

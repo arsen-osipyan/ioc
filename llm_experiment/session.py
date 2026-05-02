@@ -5,7 +5,7 @@ import ast
 from .participant import Participant
 from .model import Model
 from .utils.parsers import get_parser
-from .utils.generators import get_random_football_player, get_random_8_letters, get_random_8_symbols, get_random_list
+from .utils.generators import get_random_football_player, get_random_letter, get_random_symbol
 
 if TYPE_CHECKING:
     from experiment import Experiment
@@ -110,8 +110,7 @@ class Session:
                         parser = get_parser(measure.get('parser').get('name'))
                 
                 try:
-                    print(prompt)
-                    answer = 'a' # await self.model.generate(prompt, parser)
+                    answer = await self.model.generate(prompt, parser)
                 except Exception as e:
                     print(f'Error in Session.run(): {e}')
                     answer = None

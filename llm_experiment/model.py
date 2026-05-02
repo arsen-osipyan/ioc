@@ -78,7 +78,6 @@ class Model:
             parsed_result = parser.parse(response)
             
             if parsed_result is not None:
-                # print(f'<prompt>{prompt}</prompt>\n<response>{response}</response>\n<parsed_result>{str(parsed_result)}</parsed_result>\n\n')
                 return parsed_result
             
         print(f'Response invalid after {max_retries} attempts. Last response: "{response}".')
