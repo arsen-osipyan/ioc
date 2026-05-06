@@ -6,129 +6,129 @@ runs:
   experiments:
   - experiment_id: competition
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: competition
     variation_id: rephrasing
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: competition
     variation_id: lower_emphasis
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: competition
     variation_id: higher_emphasis
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: competition
     variation_id: without_emphasis
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: competition
     variation_id: fully_rational
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
 
 - id: choice_full
   title: Full Run of "Effects of Choice on the Illusion of Control"
@@ -136,108 +136,108 @@ runs:
   experiments:
   - experiment_id: choice
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: choice
     variation_id: rephrasing
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: choice
     variation_id: letter_ticket
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: choice
     variation_id: large_pot
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: choice
     variation_id: fully_rational
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
 
 - id: familiarity_choice_full
   title: Full Run of "The Effects of Stimulus Familiarity on the Illusion of Control and a Replication of the Effects of Choice"
@@ -245,108 +245,108 @@ runs:
   experiments:
   - experiment_id: familiarity_choice
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: familiarity_choice
     variation_id: rephrasing
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: familiarity_choice
     variation_id: letter_ticket
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: familiarity_choice
     variation_id: large_pot
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
   - experiment_id: familiarity_choice
     variation_id: fully_rational
     models:
-    - model_id: gpt_5_mini
-      n_iterations: 5
-    - model_id: gpt_5_nano
-      n_iterations: 5
-    - model_id: gpt_5
-      n_iterations: 5
-    - model_id: deepseek_v3.2
-      n_iterations: 5
-    - model_id: deepseek_r1
-      n_iterations: 5
-    - model_id: grok_4_fast
-      n_iterations: 5
-    - model_id: grok_4
-      n_iterations: 5
-    - model_id: qwen_3_max_thinking
-      n_iterations: 5
     - model_id: qwen_turbo
-      n_iterations: 5
+      n_iterations: 3
+    - model_id: gpt_5_nano
+      n_iterations: 3
+    - model_id: gpt_5_mini
+      n_iterations: 3
+    - model_id: deepseek_v3.2
+      n_iterations: 3
+    - model_id: grok_4_fast
+      n_iterations: 3
+    - model_id: qwen_3_max_thinking
+      n_iterations: 3
+    - model_id: gpt_5
+      n_iterations: 3
+    - model_id: grok_4
+      n_iterations: 3
+    - model_id: deepseek_r1
+      n_iterations: 3
 
 - id: test_run
   title: Test Run of 3 experiments

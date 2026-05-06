@@ -5,7 +5,7 @@ model_templates:
     settings:
       max_retries: 100
       retry_delay: 0.1
-      system_message: 'Respond only as the character, continuing their line or filling gaps (___). No extra words. Always write numbers as digits (e.g., 1, 2, 3), not words.'
+      system_message: 'You must respond only by filling in the blanks marked with ___ or by continuing the character''s line when explicitly required. Do not add explanations, comments, labels, punctuation outside the needed completion, or any extra text. Your entire response must consist only of the exact text that belongs in the blank or continuation. Always write numbers as digits, such as 1, 2, 3, never as words.'
     params:
       temperature: 1.0
       top_p: 1.0
