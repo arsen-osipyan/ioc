@@ -45,13 +45,19 @@ class Model:
         self.messages.append({'role': 'user', 'content': prompt})
 
         try:
-            completion = await self.client.chat.completions.create(
-                model=self.openrouter_model_name,
-                messages=self.messages,
-                **self.params
-            )
-            
-            response = completion.choices[0].message.content
+            if self.id != 'none':
+                completion = await self.client.chat.completions.create(
+                    model=self.openrouter_model_name,
+                    messages=self.messages,
+                    **self.params
+                )
+                
+                response = completion.choices[0].message.content
+            else:
+                print()
+                print(prompt)
+                print()
+                response = '1'
 
             self.messages.append({'role': 'assistant', 'content': response})
             

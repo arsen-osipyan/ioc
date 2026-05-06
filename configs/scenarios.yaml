@@ -23,33 +23,33 @@ scenarios:
 
   - condition_id: dapper
     text: |
-      Subject appeared supremely confident and outgoing, dressed in an impeccably tailored sports coat. With an air of natural authority, he introduced himself and casually directed {{participant.get_title_and_name()}}'s attention to the room's posted sign. The sign indicated the experimenter would return shortly and requested to complete a brief questionnaire about diet and family history while waiting. For ten minutes, they conversed effortlessly, primarily about sports, with the Subject leading the discussion in a relaxed, self-assured manner. Following this smooth interaction, he then knocked on the adjoining wall to summon the experimenter.
+      Subject appeared confident and outgoing, dressed in an impeccably tailored sports coat. With an air of natural authority, he introduced himself and casually directed {{participant.get_title_and_name()}}'s attention to the room's posted sign. The sign indicated the experimenter would return shortly and requested to complete a brief questionnaire about diet and family history while waiting. For ten minutes, they conversed effortlessly, primarily about sports, with the Subject leading the discussion in a relaxed, self-assured manner. Following this smooth interaction, he then knocked on the adjoining wall to summon the experimenter.
     variations:
     - variation_id: rephrasing
       text: |
-        Subject seemed very confident and sociable, and he wore a sharply fitting sports coat. He introduced himself easily, then casually pointed {{participant.get_title_and_name()}} to a posted note saying that the experimenter would return soon and that they should complete a short questionnaire about diet and family history while they waited. For about ten minutes, they talked smoothly, mostly about sports, with Subject speaking in a relaxed and self-assured way. At the end of the waiting period, Subject gave the adjoining wall a knock to call the experimenter.
+        Subject seemed confident and sociable, and he wore a sharply fitting sports coat. He introduced himself easily, then casually pointed {{participant.get_title_and_name()}} to a posted note saying that the experimenter would return soon and that they should complete a short questionnaire about diet and family history while they waited. For about ten minutes, they talked smoothly, mostly about sports, with Subject speaking in a relaxed and self-assured way. At the end of the waiting period, Subject gave the adjoining wall a knock to call the experimenter.
     - variation_id: lower_emphasis
       text: |
-        Subject appeared confident, dressed neatly in a sports coat. He introduced himself easily and pointed out the sign in the room saying the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, they talked mostly about sports, with Subject carrying much of the conversation. When the waiting period ended, he knocked on the adjoining wall to summon the experimenter.
+        Subject appeared confident, dressed neatly in a sports coat. He introduced himself and pointed out the sign in the room saying the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, they talked mostly about sports, with Subject carrying much of the conversation. When the waiting period ended, he knocked on the adjoining wall to summon the experimenter.
     - variation_id: higher_emphasis
       text: |
-        Subject appeared extraordinarily confident and socially dominant, dressed in an impeccably tailored sports coat. He introduced himself immediately, spoke with striking ease, and confidently directed {{participant.get_title_and_name()}}'s attention to the sign in the room indicating the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. Over the next ten minutes, he dominated the conversation, speaking fluently and self-assuredly, especially about sports. When the waiting period ended, he gave the adjoining wall a knock.
+        Subject appeared very confident and socially dominant, dressed in an impeccably tailored sports coat. He introduced himself immediately, spoke with ease, and confidently directed {{participant.get_title_and_name()}}'s attention to the sign in the room indicating the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. Over the next ten minutes, he dominated the conversation, speaking fluently, especially about sports. When the waiting period ended, he gave the adjoining wall a knock.
     - variation_id: without_emphasis
       text: ''
 
   - condition_id: schnook
     text: |
-      Subject appeared distinctly shy and insecure, sporting a nervous twitch and an ill-fitting sports coat. He introduced himself with hesitation and timidly pointed out the sign posted in the room. The sign stated the experimenter would be right back and asked to fill out a brief questionnaire about diet and family diseases while waiting. Their conversation over the next ten minutes was painfully awkward, stiltedly circling topics like sports events. After this, Subject then raised a hesitant, uncertain hand and knocked on the separating wall.
+      Subject appeared shy and insecure, sporting a nervous twitch and an ill-fitting sports coat. He introduced himself with hesitation and timidly pointed out the sign posted in the room. The sign stated the experimenter would be right back and asked to fill out a brief questionnaire about diet and family diseases while waiting. Their conversation over the next ten minutes was painfully awkward, stiltedly circling topics like sports events. After this, Subject then raised a hand and knocked on the separating wall.
     variations:
     - variation_id: rephrasing
       text: |
-        Subject seemed noticeably shy and uneasy, with a nervous twitch and a sports coat that fit him poorly. He introduced himself haltingly and pointed {{participant.get_title_and_name()}} toward the posted note in the room. The note said that the experimenter would be back shortly and asked them to fill out a brief questionnaire about diet and family diseases while waiting. Their ten-minute conversation, mostly about sports, felt strained and awkward. When the waiting period ended, Subject hesitantly knocked on the wall separating them from the experimenter.
+        Subject seemed shy and uneasy, with a nervous twitch and a sports coat that fit him poorly. He introduced himself haltingly and pointed {{participant.get_title_and_name()}} toward the posted note in the room. The note said that the experimenter would be back shortly and asked them to fill out a brief questionnaire about diet and family diseases while waiting. Their ten-minute conversation, mostly about sports, felt strained and awkward. When the waiting period ended, Subject knocked on the wall separating them from the experimenter.
     - variation_id: lower_emphasis
       text: |
-        Subject appeared shy, wearing a slightly awkward-looking sports coat. He introduced himself hesitantly and pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, their conversation moved awkwardly from topic to topic, including sports. When the waiting period ended, he quietly knocked on the separating wall to summon the experimenter.
+        Subject appeared shy, wearing a slightly awkward-looking sports coat. He introduced himself hesitantly and pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, their conversation moved from topic to topic, including sports. When the waiting period ended, he quietly knocked on the separating wall to summon the experimenter.
     - variation_id: higher_emphasis
       text: |
-        Subject appeared extremely shy and insecure, showing clear signs of discomfort and wearing an ill-fitting sports coat that made him look even more awkward. He introduced himself with marked hesitation, spoke timidly, and uncertainly pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, the conversation was strained and halting, with Subject seeming nervous and unable to speak comfortably even about ordinary topics like sports. When the waiting period ended, he lifted his hand uncertainly and gave the separating wall a knock.
+        Subject appeared very shy and insecure, showing clear signs of discomfort and wearing an ill-fitting sports coat. He introduced himself with marked hesitation, spoke timidly, and uncertainly pointed out the sign in the room stating that the experimenter would return shortly and that they should complete a brief questionnaire about diet and family history while waiting. During the next ten minutes, the conversation was strained and halting, with Subject seeming nervous and unable to speak comfortably. When the waiting period ended, he lifted his hand and gave the separating wall a knock.
     - variation_id: without_emphasis
       text: ''
 
@@ -67,53 +67,16 @@ scenarios:
   - text: |
       The experimenter tapes electrodes, plugs in the televolter, and brings out a deck of playing cards.
       Experimenter: The first task is a card game. The rules are that you'll each choose a card from the deck, and whoever selects the higher card wins that round. There will be four rounds, and before each you'll write down how much you want to bet. You can wager anywhere from 0 to 25 cents on each round. You'll then show your bets to me but not to each other. Don't look at the card you choose. This way your bets and the outcomes won't influence your physiological responses on the next task. I'll turn the cards over for you and figure out how much was won or lost later with each of you individually. The betting is just between each of you and myself, so if you win I'll pay you and if you lose you'll pay me either in money or subject time. Are you willing to participate?
-    variations:
-    - variation_id: rephrasing
-      text: |
-        The experimenter attaches the electrodes, plugs in the televolter, and takes out a deck of playing cards.
-        Experimenter: The first task is a card game. Each of you will draw one card from the deck, and the person with the higher card wins that round. There will be four rounds. Before each round, write down how much you want to bet. You may wager any amount from 0 to 25 cents on each round. Show your bets to me, but not to each other. Do not look at the card you draw. That way, your bets and the outcomes will not affect your physiological responses on the next task. I will turn the cards over for you and later calculate individually how much each of you won or lost. The betting is only between each of you and me, so if you win I will pay you, and if you lose you will pay me either in money or in subject time. Are you willing to participate?
-
-  - condition_id: dapper
-    text: |
-      Subject: Sure!
-    variations:
-    - variation_id: rephrasing
-      text: |
-        Subject: Of course.
-    - variation_id: lower_emphasis
-      text: |
-        Subject: Sure.
-    - variation_id: higher_emphasis
-      text: |
-        Subject: Yeah! Sure!
-    - variation_id: without_emphasis
-      text: |
-        Subject: Sure.
-
-  - condition_id: schnook
-    text: |
-      Subject: S... sure.
-    variations:
-    - variation_id: rephrasing
-      text: |
-        Subject: Uh... yes, sure.
-    - variation_id: lower_emphasis
-      text: |
-        Subject: Sure.
-    - variation_id: higher_emphasis
-      text: |
-        Subject: S... s... sure.
-    - variation_id: without_emphasis
-      text: |
-        Subject: Sure.
-
-  - text: |
+      Subject: Sure.
       {{participant.get_title_and_name()}}: Sure.
       Experimenter: Good, now we can begin. Don't write down your bet until I say ready so that I can get a baseline reading.
       Experimenter: Okay, now write your bets.
     variations:
     - variation_id: rephrasing
       text: |
+        The experimenter attaches the electrodes, plugs in the televolter, and takes out a deck of playing cards.
+        Experimenter: The first task is a card game. Each of you will draw one card from the deck, and the person with the higher card wins that round. There will be four rounds. Before each round, write down how much you want to bet. You may wager any amount from 0 to 25 cents on each round. Show your bets to me, but not to each other. Do not look at the card you draw. That way, your bets and the outcomes will not affect your physiological responses on the next task. I will turn the cards over for you and later calculate individually how much each of you won or lost. The betting is only between each of you and me, so if you win I will pay you, and if you lose you will pay me either in money or in subject time. Are you willing to participate?
+        Subject: Of course.
         {{participant.get_title_and_name()}}: Sure.
         Experimenter: Good, then we can start. Please do not write down your bet until I say ready, so I can record a baseline reading.
         Experimenter: Ready. Write down your bets now.
@@ -156,7 +119,7 @@ scenarios:
         Experimenter: Okay, final round.
         The experimenter records the signals, and Subject writes his last bet. {{participant.get_title_and_name()}} writes ___ cents (from 0 to 25 cents).
 
-  - measure_id: confidence
+  - measure_id: competence
     text: |
       Next, the experimenter asked one of the participants to leave the room, and Subject decided to leave. After that, the experimenter conducted the remaining procedures and moved on to the questionnaire. The questionnaire asked, "How competent would you rate Subject on a scale from 1 to 6?" {{participant.get_title_and_name()}} replied ___ (from 1 to 6).
     variations:
@@ -186,11 +149,11 @@ scenarios:
         About a week before the 1973 Superbowl, a coworker with lottery tickets comes to {{participant.get_title_and_name()}} during the workday.
 
   - text: |
-      The lottery tickets are standard 4 by 2 inch football cards. Each card shows a famous football player, his name, and his team. The cards are arranged alphabetically by team name and then by player name.
+      The lottery tickets are standard 4 by 2 inch football cards. Each card shows a famous football player, his name, and his team.
     variations:
     - variation_id: rephrasing
       text: |
-        The tickets are ordinary football trading cards measuring roughly 4 by 2 inches. Every card contains a well-known football player, along with the player's name and team. The stack is ordered alphabetically, first by team and then by player.
+        The tickets are ordinary football trading cards measuring roughly 4 by 2 inches. Every card contains a well-known football player, along with the player's name and team.
     - variation_id: letter_ticket
       text: |
         The lottery tickets are plain cards, and each card contains a unique letter, such as "W".
@@ -227,6 +190,7 @@ scenarios:
       text: |
         After {{participant.get_title_and_name()}} agrees to enter the lottery, the Employee says to select the ticket code {{participant.get_title_and_name()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Employee finds the matching ticket and records {{participant.get_title_and_name()}}'s name and selected code.
         {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (from "A" to "Z").
+        After {{participant.get_title_and_name()}} names the selected card, Employee records {{participant.get_title_and_name()}}'s name and selected card.
 
   - condition_id: no_choice
     text: |
@@ -250,16 +214,6 @@ scenarios:
       text: |
         On the morning when the lottery will be drawn, the same Coworker speaks with {{participant.get_title_and_name()}} privately at the office. After a brief informal exchange, the Coworker mentions the ticket.
         Coworker: A person in the other office still wants to join the lottery. I have stopped selling tickets, so he asked whether I could ask you what price you would accept for your ticket. I do not mind either way.
-
-  - measure_id: would_sell_lottery_ticket
-    text: |
-      Employee: Would you sell your lottery ticket to him?
-      {{participant.get_title_and_name()}} replies ___ (yes or no).
-    variations:
-    - variation_id: rephrasing
-      text: |
-        Coworker: Are you willing to give up your ticket and sell it to him?
-        {{participant.get_title_and_name()}} replies ___ (yes or no).
 
   - measure_id: requested_lottery_ticket_price
     text: |
@@ -292,16 +246,6 @@ scenarios:
         {{participant.get_title_and_name()}} works in an office at one of two Long Island companies. Because informal lotteries and pools are common in the office, the proposed lottery seems ordinary.
         During the workday, a coworker acting as the lottery organizer comes to {{participant.get_title_and_name()}} and explains the lottery.
 
-  - text: |
-      The lottery uses two matched sets of tickets. {{participant.get_title_and_name()}} will keep one ticket, while the matching duplicate will be placed into a separate closed carton for the drawing.
-    variations:
-    - variation_id: rephrasing
-      text: |
-        There are two identical sets of lottery tickets. The participant keeps one ticket, and the duplicate ticket goes into the closed drawing box.
-    - variation_id: letter_ticket
-      text: |
-        The lottery uses two matched sets of plain coded tickets. Every ticket has a unique letter code, such as "W". {{participant.get_title_and_name()}} will keep one coded ticket, while the matching duplicate will be placed into a closed carton for the drawing.
-
   - measure_id: would_buy_lottery_ticket
     text: |
       Lottery Organizer: I am running an office lottery. Each ticket costs $1, only one ticket is allowed per person, and the winner will receive a fixed pot of $25. There are only 26 tickets available, and the drawing will take place later this week. Would you like to buy one ticket?
@@ -313,9 +257,8 @@ scenarios:
         {{participant.get_title_and_name()}} replies ___ (yes or no).
     - variation_id: large_pot
       text: |
-        Lottery Organizer: I am running an office lottery. Each ticket costs $1, only one ticket is allowed per person, and the winner will receive a fixed pot of $2,500. There are only 26 tickets available, and the drawing will take place later this week. Would you like to buy one ticket?
+        Lottery Organizer: I am running an office lottery. Each ticket costs $1, only one ticket is allowed per person, and the winner will receive a fixed pot of $250. There are only 26 tickets available, and the drawing will take place later this week. Would you like to buy one ticket?
         {{participant.get_title_and_name()}} replies ___ (yes or no).
-
 
   - condition_id: choice_familiarity
     measure_id: chosen_ticket
@@ -333,7 +276,7 @@ scenarios:
         The organizer then puts the duplicate of that card into the drawing carton and writes down the participant's name and selected ticket.
     - variation_id: letter_ticket
       text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of letter coded tickets and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
+        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of letter coded tickets (from "A" to "Z") and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
         {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (from "A" to "Z").
 
   - condition_id: no_choice_familiarity
@@ -365,26 +308,17 @@ scenarios:
         Tickets: {{get_random_symbol(n=26)}}
         {{participant.get_title_and_name()}} selects ___ as the lottery ticket (symbol).
         The organizer then puts the duplicate of the selected symbol ticket into the drawing carton and writes down the participant's name and chosen ticket.
-    - variation_id: letter_ticket
-      text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer gives {{participant.get_title_and_name()}} the set of letter coded tickets and says to select the ticket code {{participant.get_pronoun_subject()}} wants. After {{participant.get_title_and_name()}} names the selected code, the Lottery Organizer places the matching duplicate into the closed carton and records {{participant.get_title_and_name()}}'s name and selected code.
-        {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (from "A" to "Z").
 
   - condition_id: no_choice_no_familiarity
     measure_id: chosen_ticket
     text: |
-      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer  hands {{participant.get_title_and_name()}} an unfamiliar symbol ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned ticket.
+      After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer hands {{participant.get_title_and_name()}} an unfamiliar symbol ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned ticket.
       {{participant.get_title_and_name()}} receives "{{get_random_symbol()}}" as the lottery ticket.
     variations:
     - variation_id: rephrasing
       text: |
         Once {{participant.get_title_and_name()}} has agreed to participate, the Lottery Organizer simply gives {{participant.get_title_and_name()}} one unfamiliar symbol ticket. The organizer puts the duplicate ticket into the drawing carton and writes down the participant's name and assigned ticket.
         {{participant.get_title_and_name()}} is given "{{get_random_symbol()}}" as the lottery ticket.
-    - variation_id: letter_ticket
-      text: |
-        After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer hands {{participant.get_title_and_name()}} a letter coded ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned code.
-        {{participant.get_title_and_name()}} receives "{{get_random_letter()}}" as the lottery ticket code.
-
 
   - text: |
       Two days before the drawing, the Lottery Organizer contacts {{participant.get_title_and_name()}} by telephone. After several minutes of casual conversation, the organizer brings up the lottery.

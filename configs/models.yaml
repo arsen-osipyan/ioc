@@ -14,6 +14,9 @@ model_templates:
 
 models:
 
+# Debug
+- id: none
+
 # OpenAI
 - id: gpt_5_mini
   model_template_id: default

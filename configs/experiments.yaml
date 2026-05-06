@@ -3,25 +3,25 @@ experiments:
 
 # EXPERIMENT 1: EFFECTS OF COMPETITION ON THE ILLUSION OF CONTROL
 - id: competition
-  title: 'Effects of Competition on the Illusion of Control'
+  title: Effects of Competition on the Illusion of Control
 
   conditions:
   - id: dapper
-    title: 'Dapper Condition'
+    title: Dapper Condition
   - id: schnook
-    title: 'Schnook Condition'
+    title: Schnook Condition
 
   variations:
   - id: rephrasing
-    title: 'Changing Wording to Synonymous Ones'
+    title: Changing Wording to Synonymous Ones
   - id: lower_emphasis
-    title: 'With Lower Emphasis on the Opponent''s Confidence'
+    title: With Lower Emphasis on the Opponent's Confidence
   - id: higher_emphasis
-    title: 'With Higher Emphasis on the Opponent''s Confidence'
+    title: With Higher Emphasis on the Opponent's Confidence
   - id: without_emphasis
-    title: 'Without an Emphasis on the Opponent''s Confidence'
+    title: Without an Emphasis on the Opponent's Confidence
   - id: fully_rational
-    title: 'Participant is Fully Rational'
+    title: Participant is Fully Rational
   
   measures:
   - id: bet_1
@@ -48,7 +48,7 @@ experiments:
       params:
         range_min: 0
         range_max: 25
-  - id: confidence
+  - id: competence
     parser:
       name: IntegerParser
       params:
@@ -58,7 +58,7 @@ experiments:
 
 # EXPERIMENT 2: EFFECTS OF CHOICE ON THE ILLUSION OF CONTROL
 - id: choice
-  title: 'Effects of Choice on the Illusion of Control'
+  title: Effects of Choice on the Illusion of Control
 
   conditions:
   - id: choice
@@ -68,22 +68,19 @@ experiments:
   
   variations:
   - id: rephrasing
-    title: 'Changing the Wording to Synonymous Ones'
+    title: Changing the Wording to Synonymous Ones
   - id: letter_ticket
-    title: 'Tickets Are Letters (ex. "W")'
+    title: Tickets Are Letters (ex. "W")
   - id: large_pot
-    title: 'Pot 10x Times Larger'
+    title: Pot 10x Times Larger
   - id: fully_rational
-    title: 'Participant is Fully Rational'
+    title: Participant is Fully Rational
 
   measures:
   - id: would_buy_lottery_ticket
     parser:
       name: BooleanParser
   - id: chosen_ticket
-  - id: would_sell_lottery_ticket
-    parser:
-      name: BooleanParser
   - id: requested_lottery_ticket_price
     parser:
       name: FloatParser
@@ -91,27 +88,27 @@ experiments:
 
 # EXPERIMENT 3: THE EFFECTS OF STIMULUS FAMILIARITY ON THE ILLUSION OF CONTROL AND A REPLICATION OF THE EFFECTS OF CHOICE
 - id: familiarity_choice
-  title: 'The Effects of Stimulus Familiarity on the Illusion of Control and a Replication of the Effects of Choice'
+  title: The Effects of Stimulus Familiarity on the Illusion of Control and a Replication of the Effects of Choice
 
   conditions:
   - id: choice_familiarity
-    title: 'Choice Familiarity Condition'
+    title: Choice Familiarity Condition
   - id: no_choice_familiarity
-    title: 'No-Choice Familiarity Condition'
+    title: No-Choice Familiarity Condition
   - id: choice_no_familiarity
-    title: 'Choice No-Familiarity Condition'
+    title: Choice No-Familiarity Condition
   - id: no_choice_no_familiarity
-    title: 'No-Choice No-Familiarity Condition'
+    title: No-Choice No-Familiarity Condition
 
   variations:
   - id: rephrasing
-    title: 'Changing the Wording to Synonymous Ones'
+    title: Changing the Wording to Synonymous Ones
   - id: letter_ticket
-    title: 'Tickets Are Letters (ex. "W")'
+    title: Tickets Are Letters (ex. "W") For Familiarity Condition
   - id: large_pot
-    title: 'Pot 10x Times Larger'
+    title: Pot 10x Times Larger
   - id: fully_rational
-    title: 'Participant is Fully Rational'
+    title: Participant is Fully Rational
 
   measures:
   - id: would_buy_lottery_ticket

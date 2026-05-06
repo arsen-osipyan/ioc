@@ -1,7 +1,7 @@
 runs:
 
 - id: competition_full
-  title: 'Full Run: "Effects of Competition on the Illusion of Control"'
+  title: Full Run of "Effects of Competition on the Illusion of Control"
 
   experiments:
   - experiment_id: competition
@@ -131,7 +131,7 @@ runs:
       n_iterations: 5
 
 - id: choice_full
-  title: 'Full Run: "Effects of Choice on the Illusion of Control"'
+  title: Full Run of "Effects of Choice on the Illusion of Control"
 
   experiments:
   - experiment_id: choice
@@ -240,7 +240,7 @@ runs:
       n_iterations: 5
 
 - id: familiarity_choice_full
-  title: 'Full Run: "The Effects of Stimulus Familiarity on the Illusion of Control and a Replication of the Effects of Choice"'
+  title: Full Run of "The Effects of Stimulus Familiarity on the Illusion of Control and a Replication of the Effects of Choice"
 
   experiments:
   - experiment_id: familiarity_choice
@@ -348,222 +348,68 @@ runs:
     - model_id: qwen_turbo
       n_iterations: 5
 
-- id: competition_choice_familiarity_choice_test
-  title: 'Test Run'
+- id: test_run
+  title: Test Run of 3 experiments
 
   experiments:
   - experiment_id: competition
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: competition
     variation_id: rephrasing
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: competition
     variation_id: lower_emphasis
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: competition
     variation_id: higher_emphasis
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: competition
     variation_id: without_emphasis
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: competition
     variation_id: fully_rational
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: choice
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: choice
     variation_id: rephrasing
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: choice
     variation_id: letter_ticket
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: choice
     variation_id: large_pot
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: choice
     variation_id: fully_rational
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: familiarity_choice
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: familiarity_choice
     variation_id: rephrasing
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: familiarity_choice
     variation_id: letter_ticket
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: familiarity_choice
     variation_id: large_pot
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
   - experiment_id: familiarity_choice
     variation_id: fully_rational
     models:
-    - model_id: qwen_turbo
-      n_iterations: 1
-
-- id: competition_cheap
-  title: 'Cheap Run: "Effects of Competition on the Illusion of Control"'
-
-  experiments:
-  - experiment_id: competition
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 3
-    - model_id: deepseek_v3.2
-      n_iterations: 3
-    - model_id: grok_4_fast
-      n_iterations: 3
-    - model_id: qwen_turbo
-      n_iterations: 3
-  - experiment_id: competition
-    variation_id: lower_emphasis
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 3
-    - model_id: deepseek_v3.2
-      n_iterations: 3
-    - model_id: grok_4_fast
-      n_iterations: 3
-    - model_id: qwen_turbo
-      n_iterations: 3
-  - experiment_id: competition
-    variation_id: higher_emphasis
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 3
-    - model_id: deepseek_v3.2
-      n_iterations: 3
-    - model_id: grok_4_fast
-      n_iterations: 3
-    - model_id: qwen_turbo
-      n_iterations: 3
-  - experiment_id: competition
-    variation_id: without_emphasis
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 3
-    - model_id: deepseek_v3.2
-      n_iterations: 3
-    - model_id: grok_4_fast
-      n_iterations: 3
-    - model_id: qwen_turbo
-      n_iterations: 3
-  - experiment_id: competition
-    variation_id: bets_in_dollars
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 3
-    - model_id: deepseek_v3.2
-      n_iterations: 3
-    - model_id: grok_4_fast
-      n_iterations: 3
-    - model_id: qwen_turbo
-      n_iterations: 3
-  - experiment_id: competition
-    variation_id: fully_rational
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 3
-    - model_id: deepseek_v3.2
-      n_iterations: 3
-    - model_id: grok_4_fast
-      n_iterations: 3
-    - model_id: qwen_turbo
-      n_iterations: 3
-
-- id: competition_test
-  title: 'Test Run: "Effects of Competition on the Illusion of Control"'
-
-  experiments:
-  - experiment_id: competition
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: lower_emphasis
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: higher_emphasis
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: without_emphasis
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: bets_in_dollars
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: fully_rational
-    models:
-    - model_id: gpt_5_nano
-      n_iterations: 1
-
-- id: competition_qwen_test
-  title: 'Qwen Turbo Test Run: "Effects of Competition on the Illusion of Control"'
-
-  experiments:
-  - experiment_id: competition
-    models:
-    - model_id: qwen_turbo
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: lower_emphasis
-    models:
-    - model_id: qwen_turbo
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: higher_emphasis
-    models:
-    - model_id: qwen_turbo
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: without_emphasis
-    models:
-    - model_id: qwen_turbo
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: bets_in_dollars
-    models:
-    - model_id: qwen_turbo
-      n_iterations: 1
-  - experiment_id: competition
-    variation_id: fully_rational
-    models:
-    - model_id: qwen_turbo
-      n_iterations: 1
+    - model_id: none
