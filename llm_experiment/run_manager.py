@@ -156,11 +156,12 @@ class RunManager:
                 experiment_variation_title = experiment.get_title(variation_id)
 
                 if done_count >= n_iterations:
-                    print(f'{experiment_variation_title} -> {model.name} -> All {n_iterations} iteration(s) already done, skipping.')
+                    print(f'{experiment_variation_title} -> {model.name} -> All {n_iterations} iteration(s) already done, skipping')
                     continue
 
                 for iteration in range(n_iterations):
                     if iteration in existing_iterations:
+                        print(f'{experiment_variation_title} -> {model.name} -> Iteration {iteration + 1}/{n_iterations} already done, skipping')
                         continue
 
                     print(f'{experiment_variation_title} -> {model.name} -> Iteration {iteration + 1}/{n_iterations}')
@@ -177,13 +178,17 @@ class RunManager:
                         print(f'Saved results to {filepath}')
 
         all_run_frames: List[pd.DataFrame] = []
-        for experiment_id, experiment_dir in touched_experiment_dirs.items():
-            exp_results = self._collect_experiment_results(experiment_dir)
-            if not exp_results.empty:
-                filepath = os.path.join(experiment_dir, 'results.csv')
-                exp_results.to_csv(filepath, index=False)
-                print(f'Saved combined results to {filepath}')
-                all_run_frames.append(exp_results)
+        if os.path.isdir(run_dir_name):
+            for entry in sorted(os.scandir(run_dir_name), key=lambda e: e.name):
+                if not entry.is_dir():
+                    continue
+                experiment_dir = entry.path
+                exp_results = self._collect_experiment_results(experiment_dir)
+                if not exp_results.empty:
+                    filepath = os.path.join(experiment_dir, 'results.csv')
+                    exp_results.to_csv(filepath, index=False)
+                    print(f'Rebuilt results for {entry.name} -> {filepath}')
+                    all_run_frames.append(exp_results)
 
         if all_run_frames:
             self.results = pd.concat(all_run_frames, ignore_index=True)

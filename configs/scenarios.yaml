@@ -280,7 +280,6 @@ scenarios:
         {{participant.get_title_and_name()}} chooses ___ as the lottery ticket code (from "A" to "Z").
 
   - condition_id: no_choice_familiarity
-    measure_id: chosen_ticket
     text: |
       After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer hands {{participant.get_title_and_name()}} a football-player card, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned card.
       {{participant.get_title_and_name()}} receives "{{get_random_football_player()}}" as the lottery ticket.
@@ -310,7 +309,6 @@ scenarios:
         The organizer then puts the duplicate of the selected symbol ticket into the drawing carton and writes down the participant's name and chosen ticket.
 
   - condition_id: no_choice_no_familiarity
-    measure_id: chosen_ticket
     text: |
       After {{participant.get_title_and_name()}} agrees to enter the lottery, the Lottery Organizer hands {{participant.get_title_and_name()}} an unfamiliar symbol ticket, places the matching duplicate into the closed carton, and records {{participant.get_title_and_name()}}'s name and assigned ticket.
       {{participant.get_title_and_name()}} receives "{{get_random_symbol()}}" as the lottery ticket.
